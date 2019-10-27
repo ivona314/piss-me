@@ -3,12 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "::-[CalendarManager convertUIImageToCVMat:](UIImage *):CalendarManager.mm">
+      </ContextState>
+      <ContextState
          contextName = "::-[CalendarManager checkPixels:height:width:callback:](NSString *, NSInteger *, NSInteger *, RCTResponseSenderBlock):CalendarManager.mm">
          <PersistentStrings>
             <PersistentString
                value = "matImage.cols/(*height)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[CalendarManager checkPixels:height:width:callback:](NSString *, NSNumber *, NSNumber *, RCTResponseSenderBlock):CalendarManager.mm">
       </ContextState>
       <ContextState
          contextName = "::-[CalendarManager convertMatToUIImage:](cv::Mat):CalendarManager.mm">
@@ -29,6 +35,9 @@
                value = "cvMat.elemSize()">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[CalendarManager checkPixels:screenHeight:screenWidth:leftMargin:topMargin:rightMargin:bottomMargin:callback:](NSString *, NSNumber *, NSNumber *, NSNumber *, NSNumber *, NSNumber *, NSNumber *, RCTResponseSenderBlock):CalendarManager.mm">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -18,12 +18,12 @@ RCT_EXPORT_MODULE();
 
 
 RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
-                  height:(nonnull NSNumber *)height
-                  width:(nonnull NSNumber *)width
-                  startXScreen:(nonnull NSNumber *)startXScreen
-                  startYScreen:(nonnull NSNumber *)startYScreen
-                  endXScreen:(nonnull NSNumber *)endXScreen
-                  endYScreen:(nonnull NSNumber *)endYScreen
+                  screenHeight:(nonnull NSNumber *)screenHeight
+                  screenWidth:(nonnull NSNumber *)screenWidth
+                  leftMargin:(nonnull NSNumber *)leftMargin
+                  topMargin:(nonnull NSNumber *)topMargin
+                  rightMargin:(nonnull NSNumber *)rightMargin
+                  bottomMargin:(nonnull NSNumber *)bottomMargin
                   callback:(RCTResponseSenderBlock)callback) {
   NSLog(@"num 1");
 
@@ -37,24 +37,37 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::Mat matImage = [self convertUIImageToCVMat:image];
   cv::rotate(matImage, matImage, cv::ROTATE_90_CLOCKWISE);
 
-  float widthRatio = matImage.cols/width.intValue;
-  float heightRatio = matImage.rows/height.intValue;
-  int startX = widthRatio*startXScreen.intValue;
-  int startY = heightRatio*startYScreen.intValue;
-  int screenWidth = startXScreen.intValue + endXScreen.intValue;
-  int screenHeight = startYScreen.intValue + endYScreen.intValue;
-
-  int newWidth = matImage.cols - screenWidth*widthRatio;
-  int newHeight = matImage.rows - screenHeight*heightRatio;
+  float widthRatio = matImage.cols/screenWidth.intValue;
+  float heightRatio = matImage.rows/screenHeight.intValue;
+  int startX = widthRatio*leftMargin.intValue;
+  int startY = heightRatio*topMargin.intValue;
+  int newWidth = widthRatio*(screenWidth.intValue-leftMargin.intValue- rightMargin.intValue);
+  int newHeight = heightRatio*(screenHeight.intValue-topMargin.intValue- bottomMargin.intValue);
 
   cv::Mat ROI(matImage, cv::Rect(startX, startY, newWidth,newHeight));
   cv::Mat croppedImage;
   ROI.copyTo(croppedImage);
-  
+  cv::resize(croppedImage, croppedImage, cv::Size(newWidth/2,newHeight/2));
+  cv::cvtColor(croppedImage, croppedImage, CV_RGBA2BGRA);
+
+
+  /*
   NSLog(@"new size val:%i %i",croppedImage.cols, croppedImage.rows);
+  for (int i=0; i<croppedImage.cols; i++){
+    for (int j=0; j<croppedImage.rows; j++){
+      cv::Vec3b bgrPixel = croppedImage.at<cv::Vec3b>(i, j);
+      uchar r = bgrPixel.val[0];
+      uchar g = bgrPixel.val[1];
+      uchar b = bgrPixel.val[2];
+      uchar alpha = bgrPixel.val[2];
+
+      NSLog(@"%hhu %hhu %hhu %hhu",r,g,b, alpha);
+    }
+  }
+   */
+   
   UIImage* newImg = [self convertMatToUIImage:croppedImage];
   UIImageWriteToSavedPhotosAlbum(newImg, nil, nil, nil);
-  //cv::resize(matImage, matImage, cv::Size(matImage.cols/10,matImage.rows/10));
 
   cv::Mat templateImg = [self convertUIImageToCVMat:img];
   int cols = matImage.cols - templateImg.cols + 1;
@@ -127,7 +140,7 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
 }
 
 - (UIImage *)convertMatToUIImage:(cv::Mat)cvMat {
-    NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.elemSize()*cvMat.total()];
+  NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.step.p[0]*cvMat.rows];
 
     CGColorSpaceRef colorSpace;
     CGBitmapInfo bitmapInfo;
@@ -195,6 +208,7 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
 
   return cvMat;
 }
+
 
 
 
