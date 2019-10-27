@@ -1,0 +1,45 @@
+dependencies: \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModule.mm \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Target\ Support\ Files/ReactCommon/ReactCommon-prefix.pch \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModule.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTBridge.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTBridgeDelegate.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTJavaScriptLoader.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTInspectorDevServerHelper.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTPackagerConnection.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTBridgeModule.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTFrameUpdate.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTInvalidating.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTModuleMethod.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTBridgeMethod.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTNullability.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/jscallinvoker/ReactCommon/JSCallInvoker.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/turbomodule/core/TurboModule.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-jsi/jsi/jsi-inl.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-cxxreact/cxxreact/MessageQueueThread.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTConvert.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTAnimationType.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTBorderStyle.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTLog.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTAssert.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTUtils.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTPointerEvents.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTTextDecorationLineType.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/Yoga/yoga/Yoga.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/Yoga/yoga/YGEnums.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/Yoga/yoga/YGMacros.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/Yoga/yoga/YGValue.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTCxxConvert.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Headers/Public/React-Core/React/RCTManagedPointer.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/turbomodule/core/LongLivedObject.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/node_modules/react-native/ReactCommon/turbomodule/core/TurboModuleUtils.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/Optional.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/Portability.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/portability/Config.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/CPortability.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/Traits.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/Utility.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/lang/Exception.h \
+  /Users/adrianzgaljic/Desktop/box/reactNativeOpenCvTutorial/ios/Pods/Folly/folly/CppAttributes.h

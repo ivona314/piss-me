@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "::-[CalendarManager checkPixels:height:width:callback:](NSString *, NSInteger *, NSInteger *, RCTResponseSenderBlock):CalendarManager.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "matImage.cols/(*height)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[CalendarManager convertMatToUIImage:](cv::Mat):CalendarManager.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "cvMat.data">
+            </PersistentString>
+            <PersistentString
+               value = "cvMat.total()">
+            </PersistentString>
+            <PersistentString
+               value = "cvMat.step[0]">
+            </PersistentString>
+            <PersistentString
+               value = "cvMat.type()">
+            </PersistentString>
+            <PersistentString
+               value = "cvMat.elemSize()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
