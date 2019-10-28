@@ -27,11 +27,9 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
                   callback:(RCTResponseSenderBlock)callback) {
   NSLog(@"num 1");
 
+  UIImage* templateImage = [UIImage imageNamed:@"pm"];
+  cv::Mat templateMat = [self convertUIImageToCVMat:templateImage];
 
-  NSURL *url = [NSURL URLWithString:@"https://www.shareicon.net/data/128x128/2015/11/08/668660_box_512x512.png"];
-  NSData *data = [NSData dataWithContentsOfURL:url];
-  UIImage *img = [[[UIImage alloc] initWithData:data] autorelease];
-  NSLog(@"num 2");
 
   UIImage* image = [self decodeBase64ToImage:imageAsBase64];
   cv::Mat matImage = [self convertUIImageToCVMat:image];
@@ -50,37 +48,24 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::resize(croppedImage, croppedImage, cv::Size(newWidth/2,newHeight/2));
   cv::cvtColor(croppedImage, croppedImage, CV_RGBA2BGRA);
 
-
-  /*
-  NSLog(@"new size val:%i %i",croppedImage.cols, croppedImage.rows);
-  for (int i=0; i<croppedImage.cols; i++){
-    for (int j=0; j<croppedImage.rows; j++){
-      cv::Vec3b bgrPixel = croppedImage.at<cv::Vec3b>(i, j);
-      uchar r = bgrPixel.val[0];
-      uchar g = bgrPixel.val[1];
-      uchar b = bgrPixel.val[2];
-      uchar alpha = bgrPixel.val[2];
-
-      NSLog(@"%hhu %hhu %hhu %hhu",r,g,b, alpha);
-    }
-  }
-   */
-   
-  UIImage* newImg = [self convertMatToUIImage:croppedImage];
-  UIImageWriteToSavedPhotosAlbum(newImg, nil, nil, nil);
-
-  cv::Mat templateImg = [self convertUIImageToCVMat:img];
-  int cols = matImage.cols - templateImg.cols + 1;
-  int rows = matImage.rows - templateImg.rows + 1;
+  int cols = croppedImage.cols - templateMat.cols + 1;
+  int rows = croppedImage.rows - templateMat.rows + 1;
   cv::Mat result = cv::Mat::zeros(cols, rows, CV_32F);
   cv::Mat normalised = cv::Mat::zeros(cols, rows, CV_8UC1);
   NSLog(@"num 3");
 
 
-  cv::matchTemplate( matImage, templateImg, result, CV_TM_SQDIFF);
-
-  cv::normalize(result, normalised, 0, 255, cv::NORM_MINMAX, -1, cv::Mat());
+  cv::matchTemplate( croppedImage, templateMat, result, CV_TM_SQDIFF);
+  //cv::normalize(result, normalised, 0, 255, cv::NORM_MINMAX, -1, cv::Mat());
   NSLog(@"num 4");
+  
+  
+   
+  UIImage* store1 = [self convertMatToUIImage:croppedImage];
+  UIImageWriteToSavedPhotosAlbum(store1, nil, nil, nil);
+  
+  UIImage* store2 = [self convertMatToUIImage:templateMat];
+  UIImageWriteToSavedPhotosAlbum(store2, nil, nil, nil);
 
   
   double minVal;
@@ -96,7 +81,7 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
 
   NSLog(@"num 6");
 
-  NSLog(@"min val:%i %i %i %i min value: %f max value: %f",maxLoc.x, maxLoc.y, minLoc.x, minLoc.y, minVal, maxVal);
+  NSLog(@"values:: %f %f ---- %i %i", minVal, maxVal, minLoc.x, minLoc.y );
 
    NSArray *tags =  [NSArray arrayWithObjects:
                         [NSNumber numberWithInteger:minLoc.x],

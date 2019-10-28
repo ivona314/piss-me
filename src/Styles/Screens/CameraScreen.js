@@ -108,11 +108,39 @@ export default StyleSheet.create({
   },
   takePictureContainer: {
     position: 'absolute',
-    paddingVertical: 20,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
+ 	top: 300,
   },
+    didFoundVisible: {
+    position: 'absolute',
+ 	top: 200,
+ 	right: 110,
+ 	height: 150,
+ 	width: 150,
+ },
+  didFoundNotVisible: {
+    position: 'absolute',
+ 	top: 200,
+ 	right: 110,
+ 	height: 150,
+ 	width: 150,
+    opacity: 0,
+
+
+  },
+  loadingVisible: {
+    position: 'absolute',
+ 	top: 180,
+ 	right: 110,
+    height: 200,
+    width: 150,
+    opacity: 0.6,
+	},
+	loadingNotVisible: {
+    position: 'absolute',
+ 	top: 180,
+ 	right: 110,
+    height: 200,
+    width: 150,
+    opacity: 0,
+	},
 });

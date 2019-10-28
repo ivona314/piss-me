@@ -25,10 +25,20 @@ export default class CameraScreen extends Component {
     this.proceedWithCheckingBlurryImage = this.proceedWithCheckingBlurryImage.bind(this);
     this.repeatPhoto = this.repeatPhoto.bind(this);
     this.usePhoto = this.usePhoto.bind(this);
+    
+    setInterval(() => {
+      this.takePicture();
+    }, 
+    // Define any blinking time.
+    2000);
+    
   }
    
  
   state = {
+    foundStyle: styles.didFoundNotVisible, 
+    loadingStyle: styles.loadingVisible, 
+
     cameraPermission: false,
     photoAsBase64: {
       content: '',
@@ -47,19 +57,28 @@ export default class CameraScreen extends Component {
           resolve(msg);
         });
       } else {
-          	this.refs.toast.show(styles.topRightCorner.top,DURATION.FOREVER);
 
       var {height, width} = Dimensions.get('window');
 		CalendarManager.checkPixels(imageAsBase64,
 		 height,
 		  width,
-		  styles.topLeftCorner.left,
-		  styles.topLeftCorner.top,
-		  styles.bottomRightCorner.right,
-		  styles.bottomRightCorner.bottom,
+		  styles.topLeftCorner.left, //100
+		  styles.topLeftCorner.top, //50
+		  styles.bottomRightCorner.right, //100
+		  styles.bottomRightCorner.bottom, //150
 
 		   (error, dataArray) => {
-      	resolve(dataArray[0]);
+      		resolve(dataArray[1])
+			//this.refs.toast.show(dataArray[1],DURATION.FOREVER);
+          	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<150){
+      	      this.setState({ foundStyle: styles.didFoundVisible});
+      	      this.setState({ loadingStyle: styles.loadingNotVisible});
+      	      
+          		//this.refs.toast.show("ok",DURATION.FOREVER);
+			} else {
+
+          	}
+
       });
       /*
         OpenCV.checkForBlurryImage(imageAsBase64, (error, dataArray) => {
@@ -75,7 +94,6 @@ export default class CameraScreen extends Component {
 
 
     this.checkForBlurryImage(content).then(blurryPhoto => {
-            console.log(blurryPhoto)
       //if (blurryPhoto) {
        // this.refs.toast.show('Photo is blurred!',DURATION.FOREVER);
       //  return this.repeatPhoto();
@@ -150,22 +168,16 @@ export default class CameraScreen extends Component {
             this.camera = cam;
           }}
           style={styles.preview}
-          permissionDialogTitle={'Permission to use camera'}
-          permissionDialogMessage={'We need your permission to use your camera phone'}
+          
         >
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topLeftCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomLeftCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomRightCorner} source={require('../assets/corner.png')}/>
+			<Image  style={this.state.loadingStyle} source={require('./gif2.gif')} />
+			<Image  style={this.state.foundStyle} source={require('./goodwhite2.gif')} />
 
-          <View style={styles.takePictureContainer}>
-            <TouchableOpacity onPress={this.takePicture}>
-              <View>
-                <CircleWithinCircle />
-
-              </View>
-            </TouchableOpacity>
-          </View>
+         
         </Camera>
         <Toast ref="toast" position="center" />
       </View>
