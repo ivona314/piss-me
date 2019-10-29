@@ -110,24 +110,15 @@ export default StyleSheet.create({
     position: 'absolute',
  	top: 300,
   },
-    didFoundVisible: {
+    found: {
     position: 'absolute',
  	top: 200,
  	right: 110,
  	height: 150,
  	width: 150,
  },
-  didFoundNotVisible: {
-    position: 'absolute',
- 	top: 200,
- 	right: 110,
- 	height: 150,
- 	width: 150,
-    opacity: 0,
-
-
-  },
-  loadingVisible: {
+ 
+  loading: {
     position: 'absolute',
  	top: 180,
  	right: 110,
@@ -135,12 +126,5 @@ export default StyleSheet.create({
     width: 150,
     opacity: 0.6,
 	},
-	loadingNotVisible: {
-    position: 'absolute',
- 	top: 180,
- 	right: 110,
-    height: 200,
-    width: 150,
-    opacity: 0,
-	},
+	
 });

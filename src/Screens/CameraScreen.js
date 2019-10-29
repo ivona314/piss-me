@@ -14,6 +14,9 @@ import {NativeModules, Dimensions} from 'react-native';
 import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
 import CircleWithinCircle from '../assets/svg/CircleWithinCircle';
+import SearchingAnimation from '../assets/svg/SearchingAnimation';
+import FoundAnimation from '../assets/svg/FoundAnimation';
+
 var CalendarManager = NativeModules.CalendarManager;
 
 export default class CameraScreen extends Component {
@@ -36,8 +39,8 @@ export default class CameraScreen extends Component {
    
  
   state = {
-    foundStyle: styles.didFoundNotVisible, 
-    loadingStyle: styles.loadingVisible, 
+    foundVisible: false, 
+    loadingVisible: true, 
 
     cameraPermission: false,
     photoAsBase64: {
@@ -71,8 +74,8 @@ export default class CameraScreen extends Component {
       		resolve(dataArray[1])
 			//this.refs.toast.show(dataArray[1],DURATION.FOREVER);
           	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<150){
-      	      this.setState({ foundStyle: styles.didFoundVisible});
-      	      this.setState({ loadingStyle: styles.loadingNotVisible});
+      	      this.setState({ foundVisible: true});
+      	      this.setState({ loadingVisible: false});
       	      
           		//this.refs.toast.show("ok",DURATION.FOREVER);
 			} else {
@@ -174,10 +177,9 @@ export default class CameraScreen extends Component {
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomLeftCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomRightCorner} source={require('../assets/corner.png')}/>
-			<Image  style={this.state.loadingStyle} source={require('./gif2.gif')} />
-			<Image  style={this.state.foundStyle} source={require('./goodwhite2.gif')} />
+			<SearchingAnimation visible={this.state.loadingVisible}/>
+         	<FoundAnimation visible={this.state.foundVisible}/>
 
-         
         </Camera>
         <Toast ref="toast" position="center" />
       </View>
