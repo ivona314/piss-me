@@ -9,7 +9,7 @@ export default class FoundAnimation extends Component {
 	render(){
 		if (this.props.visible){
 			return(
-				<Image style={styles.found} source={require('../found_once.gif')} />
+				<Image style={styles.found} source={require('../good2.gif')} />
 			);
 		} else {
 			return(null);
