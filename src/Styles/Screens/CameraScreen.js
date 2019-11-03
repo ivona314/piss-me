@@ -127,4 +127,52 @@ export default StyleSheet.create({
     opacity: 0.6,
 	},
 	
+	intro: {
+    height: 730,
+    width: 400,
+
+
+	},
+	hello: {
+    position: 'absolute',
+    top: 150,
+    left: 50,
+	color: '#ffffff',
+    fontSize: 45,
+    textAlign: 'center',
+
+  },
+  btn: {
+  	position: 'absolute',
+  	top: -450,
+  	left:100,
+	color: '#ffffff',
+    fontSize: 45,
+    textAlign: 'center',
+
+  },
+    button: {
+
+		position: 'absolute',
+    	padding: 20,
+        borderRadius: 5,
+        top: 450,
+
+        justifyContent: 'center',
+        alignItems: 'center',
+    	alignSelf: 'center',
+
+        backgroundColor: '#0099aa',
+        shadowColor: '#0099aa',
+        shadowOpacity: 0.9,
+        shadowOffset: { height: 1, width: 1 },
+        shadowRadius: 5,
+    },
+
+    text: {
+        fontSize: 16,
+        textTransform: 'uppercase',
+        color: '#FFFFFF',
+    },
+	
 });
