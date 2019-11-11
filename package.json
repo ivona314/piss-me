@@ -15,8 +15,15 @@
     "react-native": "0.61.2",
     "react-native-camera": "^3.8.0",
     "react-native-easy-toast": "^1.2.0",
+    "react-native-gesture-handler": "^1.5.0",
     "react-native-really-awesome-button": "^1.4.2",
-    "react-native-svg": "^9.13.2"
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.8",
+    "react-native-svg": "^9.13.2",
+    "react-native-video": "^5.0.2",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",

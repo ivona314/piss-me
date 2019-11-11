@@ -54,7 +54,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RNGestureHandler.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RNReanimated.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RNSVG.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RNScreens.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -160,6 +175,11 @@
 			<false/>
 		</dict>
 		<key>react-native-camera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>react-native-video.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

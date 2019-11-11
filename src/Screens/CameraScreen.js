@@ -16,10 +16,15 @@ import OpenCV from '../NativeModules/OpenCV';
 import CircleWithinCircle from '../assets/svg/CircleWithinCircle';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
 import FoundAnimation from '../assets/svg/FoundAnimation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 var CalendarManager = NativeModules.CalendarManager;
 
-export default class CameraScreen extends Component {
+class CameraScreen extends Component {
+ static navigationOptions = {
+		header: null,
+  }
   constructor(props) {
     super(props);
 
@@ -187,5 +192,11 @@ export default class CameraScreen extends Component {
   }
 }
 
+const AppNavigator = createStackNavigator({
+  CameraScreen: {
+    screen: CameraScreen,
+  },
+});
 
-AppRegistry.registerComponent('CameraScreen', () => CameraScreen);
+export default createAppContainer(AppNavigator);
+

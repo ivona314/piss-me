@@ -151,28 +151,57 @@ export default StyleSheet.create({
     textAlign: 'center',
 
   },
-    button: {
+  
+  btn_learn_more: {
 
 		position: 'absolute',
     	padding: 20,
         borderRadius: 5,
-        top: 450,
-
+        top: 400,
         justifyContent: 'center',
         alignItems: 'center',
     	alignSelf: 'center',
-
-        backgroundColor: '#0099aa',
-        shadowColor: '#0099aa',
-        shadowOpacity: 0.9,
-        shadowOffset: { height: 1, width: 1 },
-        shadowRadius: 5,
+		backgroundColor: '#0099aa',
+       
     },
 
+    btn_scan_code: {
+
+		position: 'absolute',
+    	padding: 20,
+        borderRadius: 5,
+        top: 500,
+        justifyContent: 'center',
+        alignItems: 'center',
+    	alignSelf: 'center',
+        backgroundColor: '#0099aa',
+
+    },
+    
+    text_wellcome: {
+    	position: 'absolute',
+    	alignSelf: 'center',
+    	textAlign: 'center',
+    	fontFamily: 'Helvetica-BoldOblique',
+		top: 150,
+        fontSize: 50,
+        color: '#FFFFFF',
+    },
     text: {
+    
         fontSize: 16,
         textTransform: 'uppercase',
         color: '#FFFFFF',
     },
+    
+    backgroundVideo: {
+    height: 750,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0
+  }
 	
 });

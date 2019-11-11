@@ -34,31 +34,31 @@
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
 		<data>
-		QP/lbQVRYMvPnmmG6BB4wIkylLA=
+		MqFMBJoMb9XvrBJayb8f9vK9FQM=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
 		<data>
-		j+8EhNgcBalLFVe05Clr/aml6wE=
+		Ec0sxcEIzMpuY02suredDXCEKXQ=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
 		<data>
-		DeZ4zHScko79O3700oZjnKqlXzg=
+		Y9l0f7mrJTMWBovgYBUWKtHfso8=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/version.plist</key>
 		<data>
-		Avj3mJ6nyryuaqzZr5MRCjNy+Jw=
+		pGCzgLhKDBKunjhH/92Ox0IfIyE=
 		</data>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<data>
-		ymXHxLu+oBPmQhRzO1XTR3HOxdY=
+		wGwKgoV1XhMJHUMGHfrpFKVJca4=
 		</data>
 		<key>Frameworks/XCTest.framework/XCTest</key>
 		<data>
-		CdB8uk+UcegctMqrD+bE+JvSII4=
+		bCwlUBqltm75qiZ+Zp2l/5/2D5o=
 		</data>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
 		<data>
-		geqgZDl+/3BjWskYqinWIW4aHC8=
+		YCpnbSCng3TL0LuP6V+KTU+zTLg=
 		</data>
 		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -71,19 +71,19 @@
 		</dict>
 		<key>Frameworks/XCTest.framework/version.plist</key>
 		<data>
-		Avj3mJ6nyryuaqzZr5MRCjNy+Jw=
+		pGCzgLhKDBKunjhH/92Ox0IfIyE=
 		</data>
 		<key>Frameworks/libXCTestBundleInject.dylib</key>
 		<data>
-		nK+c7YnyfLmRBkXBCowA7NHiOtI=
+		t+3mw5lUVqY0QpTAZKBCpuEVJTM=
 		</data>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<data>
-		c9klJMVHGAurSMh01Hu7SP9eBVA=
+		fC1GrTrYjB/jseO0NuGt7vz2mNQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FAihajPcu/kpVj4H9+k3f7AJxNA=
+		c0InNZfZ06XvDAN4tkn4qSByQ1s=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -95,19 +95,19 @@
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest.dSYM/Contents/Resources/DWARF/reactNativeOpenCvTutorialTests</key>
 		<data>
-		DsnqG8kOyDWgCLluu/+3LjSB5LY=
+		jl+DQSjIDjWj3/6jZCFFCx5Ez0E=
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/Info.plist</key>
 		<data>
-		vyjFXQ36A3Evgmrt7qC56Mn9x98=
+		txmCvNS4ZyahncK7dfqnNK1WQXY=
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		ZnNrQNA7YBUojqQZ9G3+GEFmqcg=
+		nQN0aWvD+KT3Fj6wvmyIIG76pZw=
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/reactNativeOpenCvTutorialTests</key>
 		<data>
-		Xm0UrnQj1qyReMfP9KGWgUNnHS4=
+		WSrwNkDXoqwFBW4mTYE5oNaG8vQ=
 		</data>
 		<key>assets/app.json</key>
 		<data>
@@ -141,6 +141,22 @@
 		<data>
 		pbWR5Bqv/JI6KGeuvSOqpaNGoG4=
 		</data>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon-mask.png</key>
+		<data>
+		jpFiMACcZJsxxIbM+ov9qJ/Euvw=
+		</data>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon.png</key>
+		<data>
+		keLOi1inJdXs0IRSKnXqyhW57Aw=
+		</data>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@2x.png</key>
+		<data>
+		rSvG8m4uPMSItIcsIF+N2tDJD8U=
+		</data>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@3x.png</key>
+		<data>
+		8kFG8Vv7Hfrw4yVcFrhUhbHieBA=
+		</data>
 		<key>assets/src/Screens/circles-menu-4.gif</key>
 		<data>
 		MvwXemscu3g20H616EGzmZIXOmc=
@@ -165,21 +181,29 @@
 		<data>
 		mVdW2t46DtRW0dC9OR00sJMSw6Y=
 		</data>
+		<key>assets/src/assets/good2.gif</key>
+		<data>
+		mBxWtByUb51cmzw6PN0IVBZhkF0=
+		</data>
 		<key>assets/src/assets/searching.gif</key>
 		<data>
 		JMTTIqNMYZc+vGC5//cci5Mp7LE=
 		</data>
+		<key>assets/src/assets/video.mp4</key>
+		<data>
+		rKbWYZKTRDanel/sUt2e14HkOto=
+		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		MCHTedkODKbfV19jOr9yS+oiqVY=
+		Ja4m2kJ5RxmaYmZ9eZYC5zXkjrI=
 		</data>
 		<key>ip.txt</key>
 		<data>
-		ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
+		D0qKM/KbHC9bR5ya5+xqWdJtFuM=
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		oQmWrGn79l18kAAjBBOm1bAyMMQ=
+		qKSpEFUQ48rGfrqyHxIFTeVkDbI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -265,77 +289,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QP/lbQVRYMvPnmmG6BB4wIkylLA=
+			MqFMBJoMb9XvrBJayb8f9vK9FQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			xMdyEIMjgsn0a5MYvWN4PTMlwYGR8QfI8tqyk2ZwhNE=
+			TJh1vqJT6V6CVK/oJw75pEEgKwmTh+ny+tmUoYRmcng=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			j+8EhNgcBalLFVe05Clr/aml6wE=
+			Ec0sxcEIzMpuY02suredDXCEKXQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			XP/uSUSYhaEV8iIsTrIba6NRGLpG6KizJq7HT9imLDE=
+			A9NCsepnrKcpzDPcn0cMEClKk4hTboan18ml7Yi0sDo=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DeZ4zHScko79O3700oZjnKqlXzg=
+			Y9l0f7mrJTMWBovgYBUWKtHfso8=
 			</data>
 			<key>hash2</key>
 			<data>
-			n/AEV6gXgf2SKngSwAzwQ++OhFqy8cOdDlYySqHZpGw=
+			u3AjX5sGHyixdXBlVe7V99q9ltqGOKHXr8ujJ6oohLQ=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/version.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Avj3mJ6nyryuaqzZr5MRCjNy+Jw=
+			pGCzgLhKDBKunjhH/92Ox0IfIyE=
 			</data>
 			<key>hash2</key>
 			<data>
-			OUh9uhk03aAwES8EGfEUf7CozvGNaRZ9X85DB5QghnM=
+			THNrzJMaidzgeAJYklps4T2nI0M+55NxmrF4Eil0K8o=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ymXHxLu+oBPmQhRzO1XTR3HOxdY=
+			wGwKgoV1XhMJHUMGHfrpFKVJca4=
 			</data>
 			<key>hash2</key>
 			<data>
-			nucrZlgG0LH1GhxqdOUs10Lu3F0qpppiAigfYwTTrN8=
+			X26akkNW0OCZT9xp/EhN2yG7Pwyor6aU1CUN6UG6ujE=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/XCTest</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CdB8uk+UcegctMqrD+bE+JvSII4=
+			bCwlUBqltm75qiZ+Zp2l/5/2D5o=
 			</data>
 			<key>hash2</key>
 			<data>
-			sysR7i11Ltz5Yz4XwPbSdvhK9ac+kmKv3zzArSMEsto=
+			iRYXlAcMtYXlHtyAi+G9E9BE2JTCmYSebIXjcXKZ6GI=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			geqgZDl+/3BjWskYqinWIW4aHC8=
+			YCpnbSCng3TL0LuP6V+KTU+zTLg=
 			</data>
 			<key>hash2</key>
 			<data>
-			qZwRz+8jlZuR46WcsH2aRcgZYyzkVPaoet2Uf1hvTpI=
+			I2p8kabMslzdyEkTytj0lV+j7JzzD4rCfQTe+AjNQjw=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
@@ -355,33 +379,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Avj3mJ6nyryuaqzZr5MRCjNy+Jw=
+			pGCzgLhKDBKunjhH/92Ox0IfIyE=
 			</data>
 			<key>hash2</key>
 			<data>
-			OUh9uhk03aAwES8EGfEUf7CozvGNaRZ9X85DB5QghnM=
+			THNrzJMaidzgeAJYklps4T2nI0M+55NxmrF4Eil0K8o=
 			</data>
 		</dict>
 		<key>Frameworks/libXCTestBundleInject.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nK+c7YnyfLmRBkXBCowA7NHiOtI=
+			t+3mw5lUVqY0QpTAZKBCpuEVJTM=
 			</data>
 			<key>hash2</key>
 			<data>
-			KXa3nz8/TSEW0HwyO2sPvnvBkfMk8U1dvP+QvbM/jmM=
+			7ngb/+oJUoTQPlZcZvVmkn2lZT7DgWvn984V479iAQU=
 			</data>
 		</dict>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c9klJMVHGAurSMh01Hu7SP9eBVA=
+			fC1GrTrYjB/jseO0NuGt7vz2mNQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			PKoI02Gv5yoUz1Ouokew4cPZz4VJCGthX+kVpRJFZeI=
+			tZ6ApkVzwsIpQJEqdRJDihOkIX5KM5Ki9Yd9HTUHvIQ=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest.dSYM/Contents/Info.plist</key>
@@ -399,44 +423,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DsnqG8kOyDWgCLluu/+3LjSB5LY=
+			jl+DQSjIDjWj3/6jZCFFCx5Ez0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			F1JuBeHKAHAOp+XCOjp+2T9ZhTL228Ke5jlpM0/mORU=
+			bb/ugo65VpucWemOOLaEWO/iqioKT2R9b6SJJjWie44=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vyjFXQ36A3Evgmrt7qC56Mn9x98=
+			txmCvNS4ZyahncK7dfqnNK1WQXY=
 			</data>
 			<key>hash2</key>
 			<data>
-			PoWeil8i+Mx6GyE172XAPcD8Uv4xwcoOgxbXuO42sGs=
+			HahqRlMmMkMUDuwq8C/jzNBw9Mt/2meKl9vlVp4K6oY=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZnNrQNA7YBUojqQZ9G3+GEFmqcg=
+			nQN0aWvD+KT3Fj6wvmyIIG76pZw=
 			</data>
 			<key>hash2</key>
 			<data>
-			z1ucWGPHCp7mCNV+wGBCgW8FfZ55P6YtEuCOxiPJDwM=
+			vLrjOW3+YfChRHJt3yfMd+gOuA/17xaUb0qmHsjkMCs=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/reactNativeOpenCvTutorialTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Xm0UrnQj1qyReMfP9KGWgUNnHS4=
+			WSrwNkDXoqwFBW4mTYE5oNaG8vQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zo36lk+sKuV+xf3Jht7lSiyYfyJKK1UR/GtWZLcsx20=
+			Js87IIlI346JUxejwuCDyTmSVz3ZCsK1SlPlIJ45fTk=
 			</data>
 		</dict>
 		<key>assets/app.json</key>
@@ -527,6 +551,50 @@
 			IwhJjlevRGwvnDTl5xDxhAHVwNzgTKzYvCIepGQkzCo=
 			</data>
 		</dict>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon-mask.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jpFiMACcZJsxxIbM+ov9qJ/Euvw=
+			</data>
+			<key>hash2</key>
+			<data>
+			3BOFxJPrVIOr2o/UlYerJGXuSikHgRJCsx/hu/CYWX4=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			keLOi1inJdXs0IRSKnXqyhW57Aw=
+			</data>
+			<key>hash2</key>
+			<data>
+			LN/rjlzN55dvcBL7jM5zryIpAp7iHU8VCf7RFIccbNg=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rSvG8m4uPMSItIcsIF+N2tDJD8U=
+			</data>
+			<key>hash2</key>
+			<data>
+			K3RDqaWOksoRpXW9wRWYYVpX3eMFzYznDWAmBrMCzZg=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8kFG8Vv7Hfrw4yVcFrhUhbHieBA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Pd0Hc+0n4j0leJ8wFzGzrEVa2L5aonoKG4OPicbSciU=
+			</data>
+		</dict>
 		<key>assets/src/Screens/circles-menu-4.gif</key>
 		<dict>
 			<key>hash</key>
@@ -593,6 +661,17 @@
 			72I57290/5d+4Qu/Q9qeAbb7PXBXZ3qExjS5ZVepjOc=
 			</data>
 		</dict>
+		<key>assets/src/assets/good2.gif</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mBxWtByUb51cmzw6PN0IVBZhkF0=
+			</data>
+			<key>hash2</key>
+			<data>
+			DMA/mh0DXa0dIFQilqRL1n91kKYnVUMRD+3KNa3+WyY=
+			</data>
+		</dict>
 		<key>assets/src/assets/searching.gif</key>
 		<dict>
 			<key>hash</key>
@@ -604,37 +683,48 @@
 			5fjDdbZB0KA5hqNUSHml64UAQ70myJBmpasmlpuJ6vE=
 			</data>
 		</dict>
+		<key>assets/src/assets/video.mp4</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rKbWYZKTRDanel/sUt2e14HkOto=
+			</data>
+			<key>hash2</key>
+			<data>
+			QrjfbE/zZcW4AR6Mb1zOzWVApCcrzQM+pa1ZAUo8NzY=
+			</data>
+		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MCHTedkODKbfV19jOr9yS+oiqVY=
+			Ja4m2kJ5RxmaYmZ9eZYC5zXkjrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			22CqZKU65W9LNZ9XN+FTkhPtx1dty8dPHYufQbX2j7k=
+			VNeRt7TMSso3GIF2NDZV0U0JHtwCCZ8qweoqwur74Ps=
 			</data>
 		</dict>
 		<key>ip.txt</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
+			D0qKM/KbHC9bR5ya5+xqWdJtFuM=
 			</data>
 			<key>hash2</key>
 			<data>
-			kiT8ivudM1CBS7ZWBwtafCMtt6EEUwE0qwu4dUHHjkM=
+			7zfrYYJwm/cbuhcOrs/Trn4x4/IdubwGxwVa51HdAIU=
 			</data>
 		</dict>
 		<key>main.jsbundle</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oQmWrGn79l18kAAjBBOm1bAyMMQ=
+			qKSpEFUQ48rGfrqyHxIFTeVkDbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			2WOIxguDqQRA1nIVDAhkNcJ3A+710tPCSPmRxoTwr94=
+			tdAE9p+0KAQbTAEU8qLeiHv+awgQDmKHW+bp1Qm3dHo=
 			</data>
 		</dict>
 	</dict>
