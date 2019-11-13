@@ -53,7 +53,9 @@ ignoreSilentSwitch={"obey"}
         <Text style={styles.text_wellcome}>Wellcome to{"\n"}Piss me</Text>
     
 
-		<TouchableOpacity style={styles.btn_learn_more}>
+		<TouchableOpacity style={styles.btn_learn_more}
+				                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
+
             <Text style={styles.text}>LEARN MORE</Text>
 
 		</TouchableOpacity>

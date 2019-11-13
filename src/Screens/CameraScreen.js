@@ -19,7 +19,7 @@ import FoundAnimation from '../assets/svg/FoundAnimation';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-var CalendarManager = NativeModules.CalendarManager;
+var ImageProcessing = NativeModules.ImageProcessing;
 
 class CameraScreen extends Component {
  static navigationOptions = {
@@ -67,7 +67,7 @@ class CameraScreen extends Component {
       } else {
 
       var {height, width} = Dimensions.get('window');
-		CalendarManager.checkPixels(imageAsBase64,
+		ImageProcessing.checkPixels(imageAsBase64,
 		 height,
 		  width,
 		  styles.topLeftCorner.left, //100
@@ -78,7 +78,7 @@ class CameraScreen extends Component {
 		   (error, dataArray) => {
       		resolve(dataArray[1])
 			//this.refs.toast.show(dataArray[1],DURATION.FOREVER);
-          	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<150){
+          	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<200){
       	      this.setState({ foundVisible: true});
       	      this.setState({ loadingVisible: false});
       	      

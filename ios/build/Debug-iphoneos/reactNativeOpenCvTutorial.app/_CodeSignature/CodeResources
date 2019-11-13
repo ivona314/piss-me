@@ -22,15 +22,15 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		UDvzL1GxwasRadzF4YdSFVj4JQk=
+		KtCiswg4KlpFwWuK0Mz1pPNJEb4=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib/objects-13.0+.nib</key>
 		<data>
-		0n4gFIzqXPIjQk2NdEqJuUe7iwE=
+		+UGB4eK6Ub9WRs8aLeutMAhv2Xc=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib/runtime.nib</key>
 		<data>
-		aF6AsLR3fK8ei9a+dWYzevZn268=
+		TXoJJj0xdTCEhYKxyyF7Yg2J2bc=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
 		<data>
-		Ec0sxcEIzMpuY02suredDXCEKXQ=
+		uW3X0eg+WRt4KhMOg03i8sW9RBw=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/XCTest.framework/XCTest</key>
 		<data>
-		bCwlUBqltm75qiZ+Zp2l/5/2D5o=
+		SRYWumi6HzYXqr3jkYZY+5FmDOQ=
 		</data>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -75,11 +75,11 @@
 		</data>
 		<key>Frameworks/libXCTestBundleInject.dylib</key>
 		<data>
-		t+3mw5lUVqY0QpTAZKBCpuEVJTM=
+		IM3Nd1E2C3d/jc5WDLW8lRMg8wM=
 		</data>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<data>
-		fC1GrTrYjB/jseO0NuGt7vz2mNQ=
+		4jWrR+3m/mPqS0snen6l+xaiCMM=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -107,7 +107,7 @@
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/reactNativeOpenCvTutorialTests</key>
 		<data>
-		WSrwNkDXoqwFBW4mTYE5oNaG8vQ=
+		HfsesZ6w5yNxso3L+dkUc2wbaDs=
 		</data>
 		<key>assets/app.json</key>
 		<data>
@@ -157,22 +157,6 @@
 		<data>
 		8kFG8Vv7Hfrw4yVcFrhUhbHieBA=
 		</data>
-		<key>assets/src/Screens/circles-menu-4.gif</key>
-		<data>
-		MvwXemscu3g20H616EGzmZIXOmc=
-		</data>
-		<key>assets/src/Screens/gif2.gif</key>
-		<data>
-		JMTTIqNMYZc+vGC5//cci5Mp7LE=
-		</data>
-		<key>assets/src/Screens/goodwhite.gif</key>
-		<data>
-		beV2UnyJpukBv8dQZ+tvgPkgf+4=
-		</data>
-		<key>assets/src/Screens/goodwhite2.gif</key>
-		<data>
-		h4AvZ/6IzD6WcA6YJ/PgGNbPlsc=
-		</data>
 		<key>assets/src/assets/banner3.gif</key>
 		<data>
 		C6iUWQb2eJJwCDtxQTb3wpzOVa4=
@@ -199,11 +183,11 @@
 		</data>
 		<key>ip.txt</key>
 		<data>
-		D0qKM/KbHC9bR5ya5+xqWdJtFuM=
+		ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		qKSpEFUQ48rGfrqyHxIFTeVkDbI=
+		Bw7D9HkBGlANnwD/lLOi6qq4bl4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -256,33 +240,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UDvzL1GxwasRadzF4YdSFVj4JQk=
+			KtCiswg4KlpFwWuK0Mz1pPNJEb4=
 			</data>
 			<key>hash2</key>
 			<data>
-			3hsr9iG6Qf/sE0B9FEaW5ZGgzi6cPu165DQm7dJiy30=
+			27g0uM4ZdOKDEMEaIs0NQsWDNZoRE9ltABRiJjo6aJY=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0n4gFIzqXPIjQk2NdEqJuUe7iwE=
+			+UGB4eK6Ub9WRs8aLeutMAhv2Xc=
 			</data>
 			<key>hash2</key>
 			<data>
-			JFT++kKxG09djiG/qF3UUlp6GGBKMIxrsd6aukS74kc=
+			UpMtJ8vDkCwJ0oRfNP3kIjyStUb4VQRNd3KiYlGv8Jg=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aF6AsLR3fK8ei9a+dWYzevZn268=
+			TXoJJj0xdTCEhYKxyyF7Yg2J2bc=
 			</data>
 			<key>hash2</key>
 			<data>
-			6sMFi0Z8uH1LQdzHbFA8tQqu8cG4yAPAETyloXqfifA=
+			fVNibnrDfBqU7chqYXnIGMzYJoq2L3Mx0ZfH5XnSvU8=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
@@ -300,11 +284,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ec0sxcEIzMpuY02suredDXCEKXQ=
+			uW3X0eg+WRt4KhMOg03i8sW9RBw=
 			</data>
 			<key>hash2</key>
 			<data>
-			A9NCsepnrKcpzDPcn0cMEClKk4hTboan18ml7Yi0sDo=
+			AZxOrNjibdxM7kGIvZNhCPN0WpiyhXwo/wM0NyCFVW8=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
@@ -344,11 +328,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bCwlUBqltm75qiZ+Zp2l/5/2D5o=
+			SRYWumi6HzYXqr3jkYZY+5FmDOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			iRYXlAcMtYXlHtyAi+G9E9BE2JTCmYSebIXjcXKZ6GI=
+			V+/D3LYEyc6hyGr9901KMJirD39lxuCNlts0j45lyV4=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
@@ -390,22 +374,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t+3mw5lUVqY0QpTAZKBCpuEVJTM=
+			IM3Nd1E2C3d/jc5WDLW8lRMg8wM=
 			</data>
 			<key>hash2</key>
 			<data>
-			7ngb/+oJUoTQPlZcZvVmkn2lZT7DgWvn984V479iAQU=
+			65XyqU6nthpcLyAqVZy620Ep99P6rYZjiA3Q8F4C5H8=
 			</data>
 		</dict>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fC1GrTrYjB/jseO0NuGt7vz2mNQ=
+			4jWrR+3m/mPqS0snen6l+xaiCMM=
 			</data>
 			<key>hash2</key>
 			<data>
-			tZ6ApkVzwsIpQJEqdRJDihOkIX5KM5Ki9Yd9HTUHvIQ=
+			9j0I+KgrZcq6bOAup1AmocFU5wSCV5oWRfnapd5KSGk=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest.dSYM/Contents/Info.plist</key>
@@ -456,11 +440,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WSrwNkDXoqwFBW4mTYE5oNaG8vQ=
+			HfsesZ6w5yNxso3L+dkUc2wbaDs=
 			</data>
 			<key>hash2</key>
 			<data>
-			Js87IIlI346JUxejwuCDyTmSVz3ZCsK1SlPlIJ45fTk=
+			nkAT4d2iRNwOzdB/OcLqAVK1OpKnO1goyFBSao2GUI4=
 			</data>
 		</dict>
 		<key>assets/app.json</key>
@@ -595,50 +579,6 @@
 			Pd0Hc+0n4j0leJ8wFzGzrEVa2L5aonoKG4OPicbSciU=
 			</data>
 		</dict>
-		<key>assets/src/Screens/circles-menu-4.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MvwXemscu3g20H616EGzmZIXOmc=
-			</data>
-			<key>hash2</key>
-			<data>
-			bRfmMbg58O7CZLpgBX1YKJ0lOwbNuFhpPNw5IFQwxlU=
-			</data>
-		</dict>
-		<key>assets/src/Screens/gif2.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JMTTIqNMYZc+vGC5//cci5Mp7LE=
-			</data>
-			<key>hash2</key>
-			<data>
-			5fjDdbZB0KA5hqNUSHml64UAQ70myJBmpasmlpuJ6vE=
-			</data>
-		</dict>
-		<key>assets/src/Screens/goodwhite.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			beV2UnyJpukBv8dQZ+tvgPkgf+4=
-			</data>
-			<key>hash2</key>
-			<data>
-			kcTC8yV0i6FjBPPLDyDCqg8KsD8R9jgO8gxXPBDOXIg=
-			</data>
-		</dict>
-		<key>assets/src/Screens/goodwhite2.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			h4AvZ/6IzD6WcA6YJ/PgGNbPlsc=
-			</data>
-			<key>hash2</key>
-			<data>
-			DZG4hY9I69oyCkcI20f7HHKIPEVb/B7rngtABTRH/Kk=
-			</data>
-		</dict>
 		<key>assets/src/assets/banner3.gif</key>
 		<dict>
 			<key>hash</key>
@@ -709,22 +649,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			D0qKM/KbHC9bR5ya5+xqWdJtFuM=
+			ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
 			</data>
 			<key>hash2</key>
 			<data>
-			7zfrYYJwm/cbuhcOrs/Trn4x4/IdubwGxwVa51HdAIU=
+			kiT8ivudM1CBS7ZWBwtafCMtt6EEUwE0qwu4dUHHjkM=
 			</data>
 		</dict>
 		<key>main.jsbundle</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qKSpEFUQ48rGfrqyHxIFTeVkDbI=
+			Bw7D9HkBGlANnwD/lLOi6qq4bl4=
 			</data>
 			<key>hash2</key>
 			<data>
-			tdAE9p+0KAQbTAEU8qLeiHv+awgQDmKHW+bp1Qm3dHo=
+			XjJEXP8F3n6DTPGszZDQruAI15PvFtlBb4LTZzEyeYc=
 			</data>
 		</dict>
 	</dict>
