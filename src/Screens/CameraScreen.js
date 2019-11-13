@@ -13,7 +13,6 @@ import {NativeModules, Dimensions} from 'react-native';
 
 import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
-import CircleWithinCircle from '../assets/svg/CircleWithinCircle';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
 import FoundAnimation from '../assets/svg/FoundAnimation';
 import { createAppContainer } from 'react-navigation';

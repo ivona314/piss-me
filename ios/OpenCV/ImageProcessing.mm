@@ -66,6 +66,7 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::cvtColor(calibratedColors, calibratedColors, CV_BGR2BGRA);
 
   UIImage* store2 = [self convertMatToUIImage:calibratedColors];
+  cv::cvtColor(croppedImage, croppedImage, CV_BGR2BGRA);
 
 
   int cols = croppedImage.cols - templateMat.cols + 1;

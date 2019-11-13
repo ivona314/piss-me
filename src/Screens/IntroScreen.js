@@ -18,7 +18,6 @@ import OpenCV from '../NativeModules/OpenCV';
 import CameraScreen from './CameraScreen';
 import QRCodeScreen from './QRCodeScreen';
 
-import IntroAnimation from '../assets/svg/IntroAnimation';
 import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
