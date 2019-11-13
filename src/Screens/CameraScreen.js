@@ -14,6 +14,7 @@ import {NativeModules, Dimensions} from 'react-native';
 import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
+
 import FoundAnimation from '../assets/svg/FoundAnimation';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -55,6 +56,14 @@ class CameraScreen extends Component {
     },
   };
 
+OpenAnalyseDataScreen=()=>{
+ setTimeout(() => {this.props.navigation.navigate('AnalyseDataScreen')}, 700);
+    
+ 
+ 
+  }
+ 
+
   checkForBlurryImage(imageAsBase64) {
     return new Promise((resolve, reject) => {
       if (Platform.OS === 'android') {
@@ -80,6 +89,7 @@ class CameraScreen extends Component {
           	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<200){
       	      this.setState({ foundVisible: true});
       	      this.setState({ loadingVisible: false});
+      	      this.OpenAnalyseDataScreen();
       	      
           		//this.refs.toast.show("ok",DURATION.FOREVER);
 			} else {

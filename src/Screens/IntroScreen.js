@@ -17,6 +17,7 @@ import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
 import CameraScreen from './CameraScreen';
 import QRCodeScreen from './QRCodeScreen';
+import AnalyseDataScreen from './AnalyseDataScreen';
 
 import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
@@ -53,7 +54,8 @@ ignoreSilentSwitch={"obey"}
     
 
 		<TouchableOpacity style={styles.btn_learn_more}
-				                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
+						             onPress={() => this.props.navigation.navigate('AnalyseDataScreen')}>
+
 
             <Text style={styles.text}>LEARN MORE</Text>
 
@@ -79,6 +81,9 @@ const AppNavigator = createStackNavigator({
   },
   QRCodeScreen: {
     screen: QRCodeScreen,
+  },
+  AnalyseDataScreen: {
+    screen: AnalyseDataScreen,
   },
 });
 
