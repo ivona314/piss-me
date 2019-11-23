@@ -24,6 +24,7 @@ var ImageProcessing = NativeModules.ImageProcessing;
 class CameraScreen extends Component {
  static navigationOptions = {
 		header: null,
+
   }
   constructor(props) {
     super(props);
@@ -84,9 +85,11 @@ OpenAnalyseDataScreen=()=>{
 		  styles.bottomRightCorner.bottom, //150
 
 		   (error, dataArray) => {
+		   
       		resolve(dataArray[1])
-			//this.refs.toast.show(dataArray[1],DURATION.FOREVER);
-          	if (dataArray[1]>550 && dataArray[1]<700 && dataArray[0]>100 && dataArray[0]<200){
+      		let str = dataArray[0] + ' ' + dataArray[1];
+			this.refs.toast.show(str,DURATION.FOREVER);
+          	if (dataArray[0]>300 && dataArray[0]<500 && dataArray[1]>100 && dataArray[1]<650){
       	      this.setState({ foundVisible: true});
       	      this.setState({ loadingVisible: false});
       	      this.OpenAnalyseDataScreen();

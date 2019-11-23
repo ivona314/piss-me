@@ -182,10 +182,18 @@ export default StyleSheet.create({
     	position: 'absolute',
     	alignSelf: 'center',
     	textAlign: 'center',
-    	fontFamily: 'Helvetica-BoldOblique',
+    	fontFamily: 'Helvetica-Light',
 		top: 150,
         fontSize: 50,
         color: '#FFFFFF',
+    },
+    text_results: {
+    	position: 'absolute',
+    	fontFamily: 'Helvetica-Bold',
+		top: 35,
+		left: 30,
+		fontSize: 25,
+        color: '#000000',
     },
     text: {
     

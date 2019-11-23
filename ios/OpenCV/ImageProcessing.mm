@@ -11,7 +11,7 @@
 #import <React/RCTLog.h>
 #import <React/RCTConvert.h>
 #import "ImageProcessingNative.hpp"
-#import "ColorCalibration.hpp"
+#import "HelperMethods.hpp"
 
 @implementation ImageProcessing
 
@@ -28,17 +28,17 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
                   bottomMargin:(nonnull NSNumber *)bottomMargin
                   callback:(RCTResponseSenderBlock)callback) {
   NSLog(@"num 1");
-  ImageProcessingNative imageProcessingNative;
-  ColorCalibration colorCalibration;
+  HelperMethods helperMethods;
+  /*
   double originalColor[3][3] = {{112, 115, 131},
                          {111, 51, 202},
                          {80, 228, 211}};
   double trueColor[3][3] = {{196, 165, 113},
                             {196, 38, 210},
                             {169, 242, 221}};
-  
+  */
 
-  UIImage* templateImage = [UIImage imageNamed:@"pm"];
+  UIImage* templateImage = [UIImage imageNamed:@"templatesmall"];
   cv::Mat templateMat = [self convertUIImageToCVMat:templateImage];
 
 
@@ -58,47 +58,29 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::Mat croppedImage;
   ROI.copyTo(croppedImage);
   cv::resize(croppedImage, croppedImage, cv::Size(newWidth/2,newHeight/2));
+  cv::Mat croppedOriginal;
+  cv::cvtColor(croppedImage, croppedOriginal, CV_RGBA2BGR);
+
   cv::cvtColor(croppedImage, croppedImage, CV_RGBA2BGRA);
+  
   UIImage* store1 = [self convertMatToUIImage:croppedImage];
   cv::cvtColor(croppedImage, croppedImage, CV_BGRA2BGR);
-
-  Mat calibratedColors = colorCalibration.colorCalibrateImage(croppedImage, originalColor, trueColor, 3);
-  cv::cvtColor(calibratedColors, calibratedColors, CV_BGR2BGRA);
-
-  UIImage* store2 = [self convertMatToUIImage:calibratedColors];
-  cv::cvtColor(croppedImage, croppedImage, CV_BGR2BGRA);
+  Mat imgcircles = helperMethods.getEdgeImage(croppedImage);
+  UIImage* store2 = [self convertMatToUIImage:imgcircles];
 
 
-  int cols = croppedImage.cols - templateMat.cols + 1;
-  int rows = croppedImage.rows - templateMat.rows + 1;
-  cv::Mat result = cv::Mat::zeros(cols, rows, CV_32F);
-  cv::Mat normalised = cv::Mat::zeros(cols, rows, CV_8UC1);
-  NSLog(@"num 3");
 
+   vector<Point3f> colors = helperMethods.processStripImage(croppedImage);
 
-  cv::matchTemplate( croppedImage, templateMat, result, CV_TM_SQDIFF);
-  //cv::normalize(result, normalised, 0, 255, cv::NORM_MINMAX, -1, cv::Mat());
-  NSLog(@"num 4");
-  
-  
-  double minVal;
-  double maxVal;
-  cv::Point minLoc = cv::Point(10,10);
-  cv::Point maxLoc;
-  cv::Point matchLoc;
-  cv::minMaxLoc(result, &minVal, &maxVal, &minLoc, &maxLoc, cv::Mat() );
-  cv::Mat colorMat;
-  NSLog(@"num 5");
 
   
 
-  NSLog(@"num 6");
+  NSLog(@"num 2");
 
-  NSLog(@"values:: %f %f ---- %i %i", minVal, maxVal, minLoc.x, minLoc.y );
 
    NSArray *tags =  [NSArray arrayWithObjects:
-                        [NSNumber numberWithInteger:minLoc.x],
-                        [NSNumber numberWithInteger:minLoc.y],
+                        [NSNumber numberWithInteger:0],
+                        [NSNumber numberWithInteger:1],
                         [NSNumber numberWithInteger:2],
                         [NSNumber numberWithInteger:3],
                         [NSNumber numberWithInteger:4],

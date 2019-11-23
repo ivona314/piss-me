@@ -13,8 +13,12 @@ import {
   ContributionGraph,
   StackedBarChart
 } from "react-native-chart-kit";
+import styles from '../Styles/Screens/CameraScreen';
+
 
 export default class AnalyseDataScreen extends Component {
+
+
 
 	render(){
 	
@@ -75,38 +79,51 @@ export default class AnalyseDataScreen extends Component {
 		 <View>
 		  <ProgressChart
   			data={barData1}
-	  		width={Dimensions.get('window').width}   
-  			height={150}   
+	  		width={Dimensions.get('window').width-30}   
+  			height={130}   
 	  		chartConfig={config1}
 	style={{
 	  marginVertical: 16,
-      borderRadius: 16
+      borderRadius: 16,
+      position: 'absolute',
+	  top: 100,
+	      	alignSelf: 'center',
+
     }}
 		/>
 		
 		 <ProgressChart
   			data={barData2}
-	  		width={Dimensions.get('window').width}   
-  			height={150}   
+	  		width={Dimensions.get('window').width-30}   
+  			height={130}   
 	  		chartConfig={config2}
 	style={{
 	  marginVertical: 16,
-      borderRadius: 16
+      borderRadius: 16,
+      position: 'absolute',
+	  top: 250,
+	      	alignSelf: 'center',
+
     }}
 		/>
 		
 		 <ProgressChart
   			data={barData3}
-	  		width={Dimensions.get('window').width}   
-  			height={150}   
+	  		width={Dimensions.get('window').width-30}   
+  			height={130}   
 	  		chartConfig={config3}
 	style={{
 	  marginVertical: 16,
-      borderRadius: 16
+      borderRadius: 16,
+      position: 'absolute',
+	  top: 400,
+	      	alignSelf: 'center',
+
     }}
 		/>
 
-	
+			 <Text style={styles.text_results}>Adrian,{"\n"}here are your results:</Text>
+
 		  
 		  
 		

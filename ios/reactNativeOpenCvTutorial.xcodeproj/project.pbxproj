@@ -20,7 +20,7 @@
 		2D850F78236356D6006FD4F8 /* RNOpenCvLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D850F76236356D6006FD4F8 /* RNOpenCvLibrary.mm */; };
 		2D850F8123636AF5006FD4F8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D850F7D23636719006FD4F8 /* opencv2.framework */; };
 		2D850F842364599A006FD4F8 /* ImageProcessing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D850F832364599A006FD4F8 /* ImageProcessing.mm */; };
-		2D8C5FA0237C1F4E00FAF42B /* ColorCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C5F9E237C1F4E00FAF42B /* ColorCalibration.cpp */; };
+		2D8C5FA0237C1F4E00FAF42B /* HelperMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C5F9E237C1F4E00FAF42B /* HelperMethods.cpp */; };
 		2DA5CB4D236642680036B98B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA5CB4C236642670036B98B /* Media.xcassets */; };
 		2DCD954D1E0B4F2C00145EB5 /* reactNativeOpenCvTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeOpenCvTutorialTests.m */; };
 		512C073ABE21F7A9036CF14E /* libPods-reactNativeOpenCvTutorialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25FAAEAB4DBFDA2D82D5177 /* libPods-reactNativeOpenCvTutorialTests.a */; };
@@ -65,8 +65,8 @@
 		2D850F7D23636719006FD4F8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		2D850F822364567D006FD4F8 /* ImageProcessing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProcessing.h; sourceTree = "<group>"; };
 		2D850F832364599A006FD4F8 /* ImageProcessing.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = ImageProcessing.mm; sourceTree = "<group>"; };
-		2D8C5F9E237C1F4E00FAF42B /* ColorCalibration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColorCalibration.cpp; sourceTree = "<group>"; };
-		2D8C5F9F237C1F4E00FAF42B /* ColorCalibration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColorCalibration.hpp; sourceTree = "<group>"; };
+		2D8C5F9E237C1F4E00FAF42B /* HelperMethods.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelperMethods.cpp; sourceTree = "<group>"; };
+		2D8C5F9F237C1F4E00FAF42B /* HelperMethods.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HelperMethods.hpp; sourceTree = "<group>"; };
 		2DA5CB4C236642670036B98B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4E50A710C9B727F01FF19737 /* Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativeOpenCvTutorial-tvOSTests/Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		656B5367B7B651F23A93A543 /* Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig"; path = "Target Support Files/Pods-reactNativeOpenCvTutorial-tvOS/Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 				2D850F76236356D6006FD4F8 /* RNOpenCvLibrary.mm */,
 				2D850F822364567D006FD4F8 /* ImageProcessing.h */,
 				2D850F832364599A006FD4F8 /* ImageProcessing.mm */,
-				2D8C5F9E237C1F4E00FAF42B /* ColorCalibration.cpp */,
-				2D8C5F9F237C1F4E00FAF42B /* ColorCalibration.hpp */,
+				2D8C5F9E237C1F4E00FAF42B /* HelperMethods.cpp */,
+				2D8C5F9F237C1F4E00FAF42B /* HelperMethods.hpp */,
 			);
 			path = OpenCV;
 			sourceTree = "<group>";
@@ -567,7 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8C5FA0237C1F4E00FAF42B /* ColorCalibration.cpp in Sources */,
+				2D8C5FA0237C1F4E00FAF42B /* HelperMethods.cpp in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				2D850F842364599A006FD4F8 /* ImageProcessing.mm in Sources */,
 				2D850F78236356D6006FD4F8 /* RNOpenCvLibrary.mm in Sources */,

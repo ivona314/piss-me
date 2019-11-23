@@ -50,7 +50,7 @@ rate={1.0}
 ignoreSilentSwitch={"obey"}
 />
 
-        <Text style={styles.text_wellcome}>Wellcome to{"\n"}Piss me</Text>
+        <Text style={styles.text_wellcome}>Wellcome to{"\n"}MANÉO</Text>
     
 
 		<TouchableOpacity style={styles.btn_learn_more}
@@ -62,7 +62,7 @@ ignoreSilentSwitch={"obey"}
 		</TouchableOpacity>
 		
 		<TouchableOpacity style={styles.btn_scan_code} 
-		                     onPress={() => this.props.navigation.navigate('QRCodeScreen')}>
+		                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
             <Text style={styles.text}>SCAN QR CODE</Text>
 		</TouchableOpacity>
 
@@ -78,14 +78,55 @@ const AppNavigator = createStackNavigator({
   },
   CameraScreen: {
     screen: CameraScreen,
+     navigationOptions: ({ navigation }) => ({
+      title: 'Strip scanner',
+       headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }),
+    
+    
   },
   QRCodeScreen: {
     screen: QRCodeScreen,
+       navigationOptions: ({ navigation }) => ({
+      title: 'Scan the QR code',
+       headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }),
+
+    
+    
   },
   AnalyseDataScreen: {
     screen: AnalyseDataScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Data Analysis',
+       headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }),
+
+   
   },
-});
+},{
+
+defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#0099aa',
+      },
+      headerMode: 'screen',
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
+    },
+
+
+}
+
+);
 
 export default createAppContainer(AppNavigator);
 

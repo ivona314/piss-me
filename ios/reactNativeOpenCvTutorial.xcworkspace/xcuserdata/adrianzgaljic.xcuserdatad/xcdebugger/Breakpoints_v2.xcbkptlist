@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C36D6367-5E23-47D0-9C24-5F52169994D3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenCV/CalendarManager.mm"
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9D49D1FC-DEE2-4ADB-B244-F881FE71ED9D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenCV/CalendarManager.mm"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C28F0604-807F-4576-997B-CF980C5D1706"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenCV/ImageProcessing.mm"
@@ -103,97 +103,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C869448C-EB74-4B6D-8478-2271F36153E7"
+            uuid = "8079C258-0A89-4B37-A9EB-164FC5A90717"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
+            filePath = "OpenCV/HelperMethods.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
+            startingLineNumber = "388"
+            endingLineNumber = "388"
+            landmarkName = "HelperMethods::processStripImage(imgOriginal)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A594E994-5648-4ECD-94D5-FEEC6CD82D5A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CEF3A0DD-1137-48D9-94AD-6696846A9049"
+            uuid = "40DB6B05-5015-4388-9611-9E8D329DD1A5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
+            filePath = "OpenCV/HelperMethods.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
+            startingLineNumber = "389"
+            endingLineNumber = "389"
+            landmarkName = "HelperMethods::processStripImage(imgOriginal)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "58BA1BD0-6F9A-4DAF-937F-8FE44C2B7052"
-            shouldBeEnabled = "Yes"
+            uuid = "A5465388-47CB-497C-932C-D2FFC5B87DBF"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
+            filePath = "opencv2.framework/Headers/core/mat.inl.hpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F5DFE0C2-D159-483D-AA99-CA9030E4AA5F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6826DCE-7148-423F-8FA9-1F4D01BF86B9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OpenCV/ImageProcessing.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "RCT_EXPORT_METHOD(callback)"
-            landmarkType = "9">
+            startingLineNumber = "1264"
+            endingLineNumber = "1264"
+            landmarkName = "std::vector()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

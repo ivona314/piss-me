@@ -44,7 +44,7 @@ static navigationOptions = {
   		<Text style={styles.text_wellcome}>{this.state.text}</Text>
 		<TouchableOpacity style={styles.btn_scan_code} visible={this.state.btn_visible}
 		                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
-        <Text style={styles.text}>SCAN TEST STRIP</Text>
+        <Text style={styles.text}>SCAN THE TEST STRIP</Text>
 		</TouchableOpacity>
 		</View>
 		:
