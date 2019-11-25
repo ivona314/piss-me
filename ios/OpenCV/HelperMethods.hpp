@@ -20,7 +20,7 @@ class HelperMethods {
     
 public:
     
-    Mat colorCalibrateImage(Mat original, double originalColor[][3], double measuredColor[][3], int noOfColors);
+    Mat colorCalibrateImage(Mat original, vector<vector<double>> originalColor, vector<vector<double>> measuredColor, int noOfColors);
     /*
     Takes original image and returns color found on a strip
     */
@@ -28,6 +28,7 @@ public:
   
   Mat drawMarkerCenters(Mat imgGray);
   Mat getEdgeImage(Mat img);
+  Mat getStripImageDebug(Mat img);
 
    
     
@@ -36,7 +37,7 @@ private:
   /*
    Returns color calibrated image
    */
-  Mat colorCalibrateImage(Mat original, double** calibrationMatrix);
+  Mat colorCalibrateImage(Mat original, vector<vector<double>>calibrationMatrix);
     
   /*
   Gets average values for each color channel
@@ -47,19 +48,19 @@ private:
   /*
    Calculates transformation matrix, given arrays of original and measured colors
    */
-  double** getTransformationMatrix(double originalColor[][3], double measuredColor[][3], int noOfColors);
+ vector<vector<double>> findTransformation(vector<vector<double>> originalColor, vector<vector<double>> measuredColor, int noOfColors);
   
   /*
    Transform each color channer using transformation matrix
    */
-  double* transformColor(double color[3], double** transformationMatrix);
+  vector<double> transformColor(vector<double> color, vector<vector<double>> transformationMatrix);
   
-  double* findMatrixInverse(double mat[3][3]);
+  vector<double> findMatrixInverse(vector<vector<double>> mat);
   
   /*
    Calculates coefficiants used to find transformation matrix 
    */
-  double* getCoefficients(double originalColor[][3], double trueColor[][3], int rows, int color, int coeffRow);
+  vector<double> getCoefficients(vector<vector<double>> originalColor, vector<vector<double>> trueColor, int rows, int color, int coeffRow);
   
   /*
    Finds centers of 4 circle markers
@@ -79,7 +80,7 @@ private:
   /*
    Retruns vector of colors (point.x=blue, point.y=green, point.z=red) for each sqaure of the strip
    */
-  vector<Point3f> getColorSquares(Mat img);
+  vector<Point3f> getColorSquares(Mat img, vector<vector<double>> calibrationMatrix);
   
   /*
    Returns average color within the circle

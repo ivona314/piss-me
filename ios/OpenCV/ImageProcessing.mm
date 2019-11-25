@@ -13,6 +13,7 @@
 #import "ImageProcessingNative.hpp"
 #import "HelperMethods.hpp"
 
+
 @implementation ImageProcessing
 
 RCT_EXPORT_MODULE();
@@ -47,8 +48,8 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::rotate(matImage, matImage, cv::ROTATE_90_CLOCKWISE);
 
     
-  float widthRatio = matImage.cols/screenWidth.intValue;
-  float heightRatio = matImage.rows/screenHeight.intValue;
+  float widthRatio = matImage.cols/screenWidth.floatValue;
+  float heightRatio = matImage.rows/screenHeight.floatValue;
   int startX = widthRatio*leftMargin.intValue;
   int startY = heightRatio*topMargin.intValue;
   int newWidth = widthRatio*(screenWidth.intValue-leftMargin.intValue- rightMargin.intValue);
@@ -64,30 +65,51 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   cv::cvtColor(croppedImage, croppedImage, CV_RGBA2BGRA);
   
   UIImage* store1 = [self convertMatToUIImage:croppedImage];
+  //UIImageWriteToSavedPhotosAlbum(store1, nil, nil, nil);
   cv::cvtColor(croppedImage, croppedImage, CV_BGRA2BGR);
-  Mat imgcircles = helperMethods.getEdgeImage(croppedImage);
-  UIImage* store2 = [self convertMatToUIImage:imgcircles];
+  Mat imgEdges = helperMethods.getEdgeImage(croppedImage);
+  UIImage* store2 = [self convertMatToUIImage:imgEdges];
+  //UIImageWriteToSavedPhotosAlbum(store2, nil, nil, nil);
+
+  Mat imgStrip = helperMethods.getStripImageDebug(croppedImage);
+  UIImage* store3;
+  if (imgStrip.cols>0){
+     store3 = [self convertMatToUIImage:imgStrip];
+
+  }
 
 
 
    vector<Point3f> colors = helperMethods.processStripImage(croppedImage);
-
-
+    
+  //vector<vector<NSNumber>> nsColors(12,vector<NSNumber>(3));
+  //nsColors[0][1] = colors[0].x;
   
+
+  NSMutableArray *colorsArray = [[NSMutableArray alloc] init];
+  
+
 
   NSLog(@"num 2");
-
-
-   NSArray *tags =  [NSArray arrayWithObjects:
-                        [NSNumber numberWithInteger:0],
-                        [NSNumber numberWithInteger:1],
-                        [NSNumber numberWithInteger:2],
-                        [NSNumber numberWithInteger:3],
-                        [NSNumber numberWithInteger:4],
-                        [NSNumber numberWithInteger:5],
-                        nil];
+  NSArray *tags;
+  if (colors.size()>0){
+      for (int i=0; i<12; i++){
+        NSMutableArray *color = [[NSMutableArray alloc] init];
+        [color addObject:[NSNumber numberWithFloat: colors[i].x]];
+        [color addObject:[NSNumber numberWithFloat: colors[i].y]];
+        [color addObject:[NSNumber numberWithFloat: colors[i].z]];
+        [colorsArray addObject:color];
+    }
+  } else {
+     for (int i=0; i<12; i++){
+           NSMutableArray *color = [[NSMutableArray alloc] init];
+           [color addObject:[NSNumber numberWithFloat: 0]];
+           [colorsArray addObject:color];
+       }
+  }
   
-  callback(@[[NSNull null], tags]);
+  
+  callback(@[[NSNull null], colorsArray]);
 }
 
 

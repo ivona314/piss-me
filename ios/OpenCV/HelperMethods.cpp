@@ -12,39 +12,41 @@ using namespace std;
 
 int scalingFactor = 1;
 
-Mat HelperMethods::colorCalibrateImage(Mat original, double originalColor[][3], double measuredColor[][3], int noOfColors){
-  double** calibrationMatrix = getTransformationMatrix(originalColor, measuredColor, noOfColors);
+Mat HelperMethods::colorCalibrateImage(Mat original, vector<vector<double>> originalColor, vector<vector<double>> measuredColor, int noOfColors){
+  vector<vector<double>> calibrationMatrix = findTransformation(originalColor, measuredColor, noOfColors);
   return colorCalibrateImage(original, calibrationMatrix);
 }
 
-Mat HelperMethods::colorCalibrateImage(Mat original, double** calibrationMatrix){
-  Mat src = original.clone();
-     for (int y = 0; y < src.rows; ++y) {
-         uchar *ptr = src.ptr<uchar>(y);
-         for (int x = 0; x < src.cols; ++x) {
+Mat HelperMethods::colorCalibrateImage(Mat original, vector<vector<double>> calibrationMatrix){
 
-             double* newValues;
-             double b = ptr[x*3];
-             double g = ptr[x*3 +1];
-             double r = ptr[x*3 +2];
+    Mat src = original.clone();
+    for (int y = 0; y < src.rows; ++y) {
+        uchar *ptr = src.ptr<uchar>(y);
+        for (int x = 0; x < src.cols; ++x) {
 
-             double color[3] = {b, g, r};
-             newValues = transformColor(color, calibrationMatrix);
-             for (int i=0; i<3; i++){
-                 if (newValues[i] < 0){
-                     newValues[i] = 0;
-                 } else if (newValues[i] > 255){
-                     newValues[i] = 255;
-                 }
-             }
-             
-             ptr[x * 3] = static_cast<uchar>(newValues[0]); //blue
-             ptr[x * 3 + 1] = static_cast<uchar>(newValues[1]); //green
-             ptr[x * 3 + 2] = static_cast<uchar>(newValues[2]); //red
-         }
-     }
+            vector<double> newValues;
+            double b = ptr[x*3];
+            double g = ptr[x*3 +1];
+            double r = ptr[x*3 +2];
 
-     return src;
+            vector<double> color{b, g, r};
+            newValues = transformColor(color, calibrationMatrix);
+            for (int i=0; i<3; i++){
+                if (newValues[i] < 0){
+                    newValues[i] = 0;
+                } else if (newValues[i] > 255){
+                    newValues[i] = 255;
+                }
+            }
+
+
+            ptr[x * 3] = static_cast<uchar>(newValues[0]); //blue
+            ptr[x * 3 + 1] = static_cast<uchar>(newValues[1]); //green
+            ptr[x * 3 + 2] = static_cast<uchar>(newValues[2]); //red
+        }
+    }
+
+    return src;
 }
 
 Point3f HelperMethods::getAverageValues(Mat img){
@@ -67,111 +69,109 @@ Point3f HelperMethods::getAverageValues(Mat img){
     return colorValues;
 }
 
-double** HelperMethods::getTransformationMatrix(double originalColor[][3], double measuredColor[][3], int noOfColors){
-  double** transformationMatrix;
-  transformationMatrix = new double*[3];
-  for (int i = 0; i < noOfColors; i++) {
-      transformationMatrix[i] = new double[3];
-  }
-  double* coeffsBlue;
-  double* coeffsGreen;
-  double* coeffsRed;
-  double* result;
-  double newBlue;
-  double newGreen;
-  double newRed;
+vector<vector<double>> HelperMethods::findTransformation(vector<vector<double>> originalColor, vector<vector<double>> measuredColor, int noOfColors) {
+  vector<vector<double>> transformationMatrix(3,vector<double>(3));
 
-  for (int coeffRow=0; coeffRow<3; coeffRow++){
-      coeffsBlue = getCoefficients(originalColor, measuredColor, noOfColors, 0, coeffRow);
-      coeffsGreen = getCoefficients(originalColor, measuredColor, noOfColors, 1, coeffRow);
-      coeffsRed = getCoefficients(originalColor, measuredColor, noOfColors, 2, coeffRow);
+     vector<double> coeffsBlue;
+     vector<double> coeffsGreen;
+     vector<double> coeffsRed;
+     vector<double> result;
+     double newBlue;
+     double newGreen;
+     double newRed;
+     for (int coeffRow=0; coeffRow<3; coeffRow++){
+        
+         coeffsBlue = getCoefficients(originalColor, measuredColor, noOfColors, 0, coeffRow);
+         coeffsGreen = getCoefficients(originalColor, measuredColor, noOfColors, 1, coeffRow);
+         coeffsRed = getCoefficients(originalColor, measuredColor, noOfColors, 2, coeffRow);
 
-      double mat[3][3] = {{coeffsBlue[0], coeffsBlue[1], coeffsBlue[2]},{coeffsGreen[0], coeffsGreen[1], coeffsGreen[2]},{coeffsRed[0], coeffsRed[1], coeffsRed[2]}};
-      result = findMatrixInverse(mat);
-      newBlue = coeffsBlue[3]*result[0] + coeffsGreen[3]*result[3] + coeffsRed[3]*result[6];
-      newGreen = coeffsBlue[3]*result[1] + coeffsGreen[3]*result[4] + coeffsRed[3]*result[7];
-      newRed = coeffsBlue[3]*result[2] + coeffsGreen[3]*result[5] + coeffsRed[3]*result[8];
-      transformationMatrix[coeffRow][0] = newBlue;
-      transformationMatrix[coeffRow][1] = newGreen;
-      transformationMatrix[coeffRow][2] = newRed;
-  }
+         vector<vector<double>> mat{{coeffsBlue[0], coeffsBlue[1], coeffsBlue[2]},{coeffsGreen[0], coeffsGreen[1], coeffsGreen[2]},{coeffsRed[0], coeffsRed[1], coeffsRed[2]}};
+         result = findMatrixInverse(mat);
+         newBlue = coeffsBlue[3]*result[0] + coeffsGreen[3]*result[3] + coeffsRed[3]*result[6];
+         newGreen = coeffsBlue[3]*result[1] + coeffsGreen[3]*result[4] + coeffsRed[3]*result[7];
+         newRed = coeffsBlue[3]*result[2] + coeffsGreen[3]*result[5] + coeffsRed[3]*result[8];
+         transformationMatrix[coeffRow][0] = newBlue;
+         transformationMatrix[coeffRow][1] = newGreen;
+         transformationMatrix[coeffRow][2] = newRed;
+     }
 
-  return transformationMatrix;
+     return transformationMatrix;
 }
 
-double* HelperMethods::transformColor(double color[3], double** transformationMatrix){
-    vector<vector<double>> tM(3,vector<double>(3));
-
-    double* newColor;
-    newColor = new double[3];
+vector<double> HelperMethods::transformColor(vector<double> color, vector<vector<double>> transformationMatrix){
+    vector<double> newColor(3);
     for (int i=0; i<3; i++){
-         for (int j=0; j<3; j++){
-             newColor[i] += color[j]*transformationMatrix[i][j];
-         }
+        for (int j=0; j<3; j++){
+            newColor[i] += color[j]*transformationMatrix[i][j];
+        }
     }
     return newColor;
 }
 
-double* HelperMethods::findMatrixInverse(double mat[3][3]){
-  int i, j;
+vector<double> HelperMethods::findMatrixInverse(vector<vector<double>> mat){
+    int i, j;
 
-  float determinant = 0;
+    //finding determinant
+    float determinant = 0;
 
-  for(i = 0; i < 3; i++){
-      determinant = determinant + (mat[0][i] * (mat[1][(i+1)%3] * mat[2][(i+2)%3] - mat[1][(i+2)%3] * mat[2][(i+1)%3]));
-  }
-  double result[3][3];
-  for(i = 0; i < 3; i++){
-    for(j = 0; j < 3; j++){
-          result[i][j] = ((mat[(j+1)%3][(i+1)%3] * mat[(j+2)%3][(i+2)%3]) - (mat[(j+1)%3][(i+2)%3] * mat[(j+2)%3][(i+1)%3]))/ determinant;
+    for(i = 0; i < 3; i++)
+        determinant = determinant + (mat[0][i] * (mat[1][(i+1)%3] * mat[2][(i+2)%3] - mat[1][(i+2)%3] * mat[2][(i+1)%3]));
+
+
+    vector<double> result(9);
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++)
+            result[3*i+j] = ((mat[(j+1)%3][(i+1)%3] * mat[(j+2)%3][(i+2)%3]) - (mat[(j+1)%3][(i+2)%3] * mat[(j+2)%3][(i+1)%3]))/ determinant;
     }
-  }
-  return reinterpret_cast<double *>(result);
+
+
+    return result;
 }
 
 
-double* HelperMethods::getCoefficients(double originalColor[][3], double trueColor[][3], int rows, int color, int coeffRow){
-  double a = 0;
-  double b = 0;
-  double c = 0;
-  double d = 0;
+vector<double> HelperMethods::getCoefficients(vector<vector<double>> originalColor, vector<vector<double>> trueColor, int rows, int color, int coeffRow){
+    double a = 0;
+    double b = 0;
+    double c = 0;
+    double d = 0;
 
-  //blue
-  if (color == 0) {
-      for (int i = 0; i < rows; i++) {
-          a += 2 * originalColor[i][0] * originalColor[i][0];
-          b += 2 * originalColor[i][0] * originalColor[i][1];
-          c += 2 * originalColor[i][0] * originalColor[i][2];
-          d += 2 * originalColor[i][0] * trueColor[i][coeffRow];
-      }
-      //green
-  } else if (color == 1){
-      for (int i = 0; i < rows; i++) {
-          a += 2 * originalColor[i][0] * originalColor[i][1];
-          b += 2 * originalColor[i][1] * originalColor[i][1];
-          c += 2 * originalColor[i][1] * originalColor[i][2];
-          d += 2 * originalColor[i][1] * trueColor[i][coeffRow];
-      }
-      //red
-  } else if (color == 2){
-      for (int i = 0; i < rows; i++) {
-          a += 2 * originalColor[i][0] * originalColor[i][2];
-          b += 2 * originalColor[i][1] * originalColor[i][2];
-          c += 2 * originalColor[i][2] * originalColor[i][2];
-          d += 2 * originalColor[i][2] * trueColor[i][coeffRow];
-      }
-  }
-  double* result = new double[4]{a, b, c, d};
+    //blue
+    if (color == 0) {
+        for (int i = 0; i < rows; i++) {
+            a += 2 * originalColor[i][0] * originalColor[i][0];
+            b += 2 * originalColor[i][0] * originalColor[i][1];
+            c += 2 * originalColor[i][0] * originalColor[i][2];
+            d += 2 * originalColor[i][0] * trueColor[i][coeffRow];
+        }
+        //green
+    } else if (color == 1){
+        for (int i = 0; i < rows; i++) {
+            a += 2 * originalColor[i][0] * originalColor[i][1];
+            b += 2 * originalColor[i][1] * originalColor[i][1];
+            c += 2 * originalColor[i][1] * originalColor[i][2];
+            d += 2 * originalColor[i][1] * trueColor[i][coeffRow];
+        }
+        //red
+    } else if (color == 2){
+        for (int i = 0; i < rows; i++) {
+            a += 2 * originalColor[i][0] * originalColor[i][2];
+            b += 2 * originalColor[i][1] * originalColor[i][2];
+            c += 2 * originalColor[i][2] * originalColor[i][2];
+            d += 2 * originalColor[i][2] * trueColor[i][coeffRow];
+        }
+    }
+    vector<double> result{a, b, c, d};
 
-  return result;
+    return result;
 }
+
 Mat HelperMethods::drawMarkerCenters(Mat imgGray){
   cvtColor(imgGray, imgGray, COLOR_BGR2GRAY);
 
 vector<Point3f> result;
 GaussianBlur(imgGray, imgGray, Size(9, 9), 2, 2 );
 vector<Vec3f> circles;
-HoughCircles(imgGray, circles, HOUGH_GRADIENT, 1, 200/scalingFactor, 40, 30, 30/scalingFactor, 40/scalingFactor);
+HoughCircles(imgGray, circles, HOUGH_GRADIENT, 1, 200/scalingFactor, 40, 30, 20/scalingFactor, 50/scalingFactor);
 
 Point3f topLeft, topRight, bottomLeft, bottomRight;
 vector<float> xPoints;
@@ -191,7 +191,7 @@ vector<Point3f> HelperMethods::getMarkerCenters(Mat imgGray){
     vector<Point3f> result;
     GaussianBlur(imgGray, imgGray, Size(9, 9), 2, 2 );
     vector<Vec3f> circles;
-    HoughCircles(imgGray, circles, HOUGH_GRADIENT, 1, 200/scalingFactor, 40, 30, 30/scalingFactor, 40/scalingFactor);
+    HoughCircles(imgGray, circles, HOUGH_GRADIENT, 1, 160/scalingFactor, 40, 30, 25/scalingFactor, 50/scalingFactor);
 
     Point3f topLeft, topRight, bottomLeft, bottomRight;
     vector<float> xPoints;
@@ -339,18 +339,20 @@ Mat HelperMethods::getStripImage(Mat imgTransformed){
   return result;
 }
 
-vector<Point3f> HelperMethods::getColorSquares(Mat img){
+vector<Point3f> HelperMethods::getColorSquares(Mat img, vector<vector<double>> calibrationMatrix){
   vector<Point3f> result;
   int noOfColors = 12;
   float partHeight = img.rows/12;
   float ratio = 50.0/63;
   float squareHeight = ratio * partHeight;
   float spaceHeight = partHeight - squareHeight;
-  int squareOffset = 20/scalingFactor;
+  int squareOffset = 1/scalingFactor;
+  cout << "cols:" << img.cols << endl;
   for (int i=0; i<12; i++){
-
+    cout << "size: " <<  i*partHeight +squareHeight << endl;
       Mat imgSquare = img(Rect(squareOffset, i*partHeight+squareOffset, img.cols-squareOffset, squareHeight-squareOffset));
-      result.push_back(getAverageValues(imgSquare));
+      Mat calibrated = colorCalibrateImage(imgSquare, calibrationMatrix);
+      result.push_back(getAverageValues(calibrated));
       rectangle(img, Point2f(squareOffset, i*partHeight+squareOffset), Point2f(img.cols-squareOffset, i*partHeight+squareHeight-squareOffset), cv::Scalar(0, 0, 255), 2);
   }
   return result;
@@ -410,30 +412,82 @@ vector<Point3f> HelperMethods::processStripImage(Mat imgOriginal){
         bottomLeftColor = getMarkerColor(img, bottomLeft);
         bottomRightColor = getMarkerColor(img, bottomRight);
 
-        double colorsMeasured[5][3] = {{topLeftColor.x,topLeftColor.y, topLeftColor.z},
+        vector<vector<double>> colorsMeasured{{topLeftColor.x,topLeftColor.y, topLeftColor.z},
                                        {topRightColor.x, topRightColor.y, topRightColor.z},
                                        {bottomLeftColor.x, bottomLeftColor.y, bottomLeftColor.z},
                                        {bottomRightColor.x, bottomRightColor.y, bottomRightColor.z},
                                        {18, 23, 26}};
 
 
-        double colorsOriginal[5][3] = {{0, 155, 255},
+        vector<vector<double>> colorsOriginal{{0, 155, 255},
                                        {255, 155, 0},
                                        {0, 255, 255},
+                                        {0, 255, 0},
                                        {0, 0, 0}};
 
-        double** transformation = getTransformationMatrix(colorsMeasured,colorsOriginal, 5);
+        vector<vector<double>> transformation = findTransformation(colorsMeasured,colorsOriginal, 5);
         cout << "Found transformation matrix" << endl;
-        Mat calibrated = colorCalibrateImage(img, transformation);
-        cout << "Image colors are calibrated" << endl;
         Mat imgTransformed = perspectiveTransformImage(img.clone(), topLeft, topRight, bottomLeft, bottomRight);
         cout << "Image is transformed" << endl;
         Mat imgStrip = getStripImage(imgTransformed.clone());
-        cout << "Strip is extracted from the image" << endl;
-        colorValues = getColorSquares(imgStrip);
-        cout << "Color values are found" << endl;
+        cout << "Strip is extracted from the image, size: " << imgStrip.cols << "," << imgStrip.rows << endl;
+        if (imgStrip.cols > 40/scalingFactor){
+          cout << "Color values are found" << endl;
+          colorValues = getColorSquares(imgStrip, transformation);
+        } else {
+          cout << "Color values NOT FOUND" << endl;
+        }
         
     }
     return colorValues;
 }
 
+Mat HelperMethods::getStripImageDebug(Mat imgOriginal){
+  
+  cout << "Processing image" << endl;
+  Mat img;
+  resize(imgOriginal, img, cv::Size(), 1.0/scalingFactor, 1.0/scalingFactor);
+  Mat imgGray;
+  Mat imgStrip;
+  cvtColor(img, imgGray, COLOR_BGR2GRAY);
+  cout << "Image converted to gray" << endl;
+  vector<Point3f> markerCenters = getMarkerCenters(imgGray);
+  if (markerCenters.size()==4) {
+    
+      Point3f topLeft, topRight, bottomLeft, bottomRight;
+      Point3f topLeftColor, topRightColor, bottomLeftColor, bottomRightColor;
+      Point3f topLeftColorCalibrated, topRightColorCalibrated, bottomLeftColorCalibrated, bottomRightColorCalibrated;
+
+      topLeft = markerCenters.at(0);
+      topRight = markerCenters.at(1);
+      bottomLeft = markerCenters.at(2);
+      bottomRight = markerCenters.at(3);
+
+      topLeftColor = getMarkerColor(img, topLeft);
+      topRightColor = getMarkerColor(img, topRight);
+      bottomLeftColor = getMarkerColor(img, bottomLeft);
+      bottomRightColor = getMarkerColor(img, bottomRight);
+
+      vector<vector<double>> colorsMeasured{{topLeftColor.x,topLeftColor.y, topLeftColor.z},
+                                     {topRightColor.x, topRightColor.y, topRightColor.z},
+                                     {bottomLeftColor.x, bottomLeftColor.y, bottomLeftColor.z},
+                                     {bottomRightColor.x, bottomRightColor.y, bottomRightColor.z},
+                                     {18, 23, 26}};
+
+
+      vector<vector<double>> colorsOriginal{{0, 155, 255},
+                                     {255, 155, 0},
+                                     {0, 255, 255},
+                                      {0, 255, 0},
+                                     {0, 0, 0}};
+
+      vector<vector<double>> transformation = findTransformation(colorsMeasured,colorsOriginal, 5);
+      cout << "Found transformation matrix" << endl;
+      Mat imgTransformed = perspectiveTransformImage(img.clone(), topLeft, topRight, bottomLeft, bottomRight);
+      cout << "Image is transformed" << endl;
+      imgStrip = getStripImage(imgTransformed.clone());
+     
+      
+  }
+  return imgStrip;
+}

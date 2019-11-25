@@ -52,14 +52,14 @@ export default StyleSheet.create({
   topLeftCorner: {
     position: 'absolute',
  	top: 50,
- 	left: 100,
+ 	left: 130,
  	height: 30,
     width: 30,
   },
   topRightCorner: {
     position: 'absolute',
  	top: 50,
- 	right: 100,
+ 	right: 130,
  	height: 30,
     width: 30,
 	transform: [{ rotate: '90deg' }],
@@ -67,7 +67,7 @@ export default StyleSheet.create({
   bottomLeftCorner: {
     position: 'absolute',
  	bottom: 150,
- 	left: 100,
+ 	left: 130,
  	height: 30,
     width: 30,
 	transform: [{ rotate: '-90deg' }],
@@ -75,7 +75,7 @@ export default StyleSheet.create({
   bottomRightCorner: {
     position: 'absolute',
  	bottom: 150,
- 	right: 100,
+ 	right: 130,
  	height: 30,
     width: 30,
 	transform: [{ rotate: '180deg' }],

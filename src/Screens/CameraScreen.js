@@ -14,6 +14,7 @@ import {NativeModules, Dimensions} from 'react-native';
 import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
+import ColorSquare from '../assets/svg/ColorSquare';
 
 import FoundAnimation from '../assets/svg/FoundAnimation';
 import { createAppContainer } from 'react-navigation';
@@ -47,6 +48,9 @@ class CameraScreen extends Component {
   state = {
     foundVisible: false, 
     loadingVisible: true, 
+    colors: ['rgb(255, 0, 255)',
+    'rgb(0, 0, 255)',
+    'rgb(255, 255, 0)'],
 
     cameraPermission: false,
     photoAsBase64: {
@@ -86,18 +90,28 @@ OpenAnalyseDataScreen=()=>{
 
 		   (error, dataArray) => {
 		   
-      		resolve(dataArray[1])
-      		let str = dataArray[0] + ' ' + dataArray[1];
+      		//resolve(dataArray[1])
+      		let str = dataArray[0][0];
+      		if (dataArray[0][0] != 0){
+				this.setState({colors: []});
+      			for (var i=0; i<12; i++){
+      				let colorstr = 'rgb(' + dataArray[i][2] + ',' + dataArray[i][1] + ',' + dataArray[i][0] + ')';
+					this.setState({ colors: [...this.state.colors, colorstr] });
+      			}
+      		}
+      		
+
+      		//this.setState({colors: [colorstr1, colorstr2, colorstr3]});
 			this.refs.toast.show(str,DURATION.FOREVER);
-          	if (dataArray[0]>300 && dataArray[0]<500 && dataArray[1]>100 && dataArray[1]<650){
-      	      this.setState({ foundVisible: true});
-      	      this.setState({ loadingVisible: false});
-      	      this.OpenAnalyseDataScreen();
+          	//if (dataArray[0]>300 && dataArray[0]<500 && dataArray[1]>100 && dataArray[1]<650){
+      	      //this.setState({ foundVisible: true});
+      	      //this.setState({ loadingVisible: false});
+      	      //this.OpenAnalyseDataScreen();
       	      
           		//this.refs.toast.show("ok",DURATION.FOREVER);
-			} else {
+			//} else {
 
-          	}
+          	//}
 
       });
       /*
@@ -183,6 +197,8 @@ OpenAnalyseDataScreen=()=>{
 
     return (
       <View style={styles.container}>
+                      
+
         <Camera
           ref={cam => {
             this.camera = cam;
@@ -198,6 +214,7 @@ OpenAnalyseDataScreen=()=>{
          	<FoundAnimation visible={this.state.foundVisible}/>
 
         </Camera>
+		<ColorSquare colors={this.state.colors} top={30}/>
         <Toast ref="toast" position="center" />
       </View>
     );
