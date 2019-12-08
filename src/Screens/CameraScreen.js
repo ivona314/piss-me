@@ -15,13 +15,17 @@ import styles from '../Styles/Screens/CameraScreen';
 import OpenCV from '../NativeModules/OpenCV';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
 import ColorSquare from '../assets/svg/ColorSquare';
+import AnalyseDataScreen from './AnalyseDataScreen';
+import ResultsScreen from './ResultsScreen';
+import WhiteBackground from './WhiteBackground';
+
 
 import FoundAnimation from '../assets/svg/FoundAnimation';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 var ImageProcessing = NativeModules.ImageProcessing;
-
+console.disableYellowBox = true;
 class CameraScreen extends Component {
  static navigationOptions = {
 		header: null,
@@ -35,22 +39,39 @@ class CameraScreen extends Component {
     this.proceedWithCheckingBlurryImage = this.proceedWithCheckingBlurryImage.bind(this);
     this.repeatPhoto = this.repeatPhoto.bind(this);
     this.usePhoto = this.usePhoto.bind(this);
-    
     setInterval(() => {
       this.takePicture();
-    }, 
+    },
     // Define any blinking time.
     2000);
-    
+
+    setTimeout(() => {
+      this.setState({whiteBackgroundVisible: true});
+    },
+    // Define any blinking time.
+    200000);
+
+
   }
-   
- 
+
+
   state = {
-    foundVisible: false, 
-    loadingVisible: true, 
+    foundVisible: false,
+    loadingVisible: true,
+    whiteBackgroundVisible: false,
+    showColorSquares: false,
     colors: ['rgb(255, 0, 255)',
     'rgb(0, 0, 255)',
-    'rgb(255, 255, 0)'],
+    'rgb(255, 255, 0)',
+    'rgb(255, 255, 0)',
+    'rgb(255, 255, 255)',
+    'rgb(225, 245, 0)',
+    'rgb(215, 235, 0)',
+    'rgb(195, 225, 0)',
+    'rgb(175, 215, 0)',
+    'rgb(165, 205, 0)',
+    'rgb(145, 195, 0)',
+    'rgb(125, 185, 0)'],
 
     cameraPermission: false,
     photoAsBase64: {
@@ -61,13 +82,8 @@ class CameraScreen extends Component {
     },
   };
 
-OpenAnalyseDataScreen=()=>{
- setTimeout(() => {this.props.navigation.navigate('AnalyseDataScreen')}, 700);
-    
- 
- 
-  }
- 
+
+
 
   checkForBlurryImage(imageAsBase64) {
     return new Promise((resolve, reject) => {
@@ -89,25 +105,28 @@ OpenAnalyseDataScreen=()=>{
 		  styles.bottomRightCorner.bottom, //150
 
 		   (error, dataArray) => {
-		   
+
       		//resolve(dataArray[1])
       		let str = dataArray[0][0];
       		if (dataArray[0][0] != 0){
-				this.setState({colors: []});
+            this.setState({whiteBackgroundVisible: true});
+            this.setState({showColorSquares: true});
+            this.setState({ loadingVisible: false});
+				        this.setState({colors: []});
       			for (var i=0; i<12; i++){
       				let colorstr = 'rgb(' + dataArray[i][2] + ',' + dataArray[i][1] + ',' + dataArray[i][0] + ')';
 					this.setState({ colors: [...this.state.colors, colorstr] });
       			}
       		}
-      		
+
 
       		//this.setState({colors: [colorstr1, colorstr2, colorstr3]});
-			this.refs.toast.show(str,DURATION.FOREVER);
+			//this.refs.toast.show(str,DURATION.FOREVER);
           	//if (dataArray[0]>300 && dataArray[0]<500 && dataArray[1]>100 && dataArray[1]<650){
       	      //this.setState({ foundVisible: true});
       	      //this.setState({ loadingVisible: false});
       	      //this.OpenAnalyseDataScreen();
-      	      
+
           		//this.refs.toast.show("ok",DURATION.FOREVER);
 			//} else {
 
@@ -172,7 +191,7 @@ OpenAnalyseDataScreen=()=>{
     if (this.state.photoAsBase64.isPhotoPreview) {
       return (
         <View style={styles.container}>
-          <Toast ref="toast" position="center" />
+          {/*<Toast ref="toast" position="center" /> */}
           <Image
             source={{ uri: `data:image/png;base64,${this.state.photoAsBase64.content}` }}
             style={styles.imagePreview}
@@ -197,14 +216,14 @@ OpenAnalyseDataScreen=()=>{
 
     return (
       <View style={styles.container}>
-                      
+
 
         <Camera
           ref={cam => {
             this.camera = cam;
           }}
           style={styles.preview}
-          
+
         >
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topLeftCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner.png')}/>
@@ -214,8 +233,10 @@ OpenAnalyseDataScreen=()=>{
          	<FoundAnimation visible={this.state.foundVisible}/>
 
         </Camera>
-		<ColorSquare colors={this.state.colors} top={30}/>
-        <Toast ref="toast" position="center" />
+        <WhiteBackground visible={this.state.whiteBackgroundVisible}/>
+
+		<ColorSquare colors={this.state.colors} visible={this.state.showColorSquares} top={30}/>
+        {/* <Toast ref="toast" position="center" /> */}
       </View>
     );
   }
@@ -228,4 +249,3 @@ const AppNavigator = createStackNavigator({
 });
 
 export default createAppContainer(AppNavigator);
-

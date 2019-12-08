@@ -18,10 +18,13 @@ import OpenCV from '../NativeModules/OpenCV';
 import CameraScreen from './CameraScreen';
 import QRCodeScreen from './QRCodeScreen';
 import AnalyseDataScreen from './AnalyseDataScreen';
+import AnimationScreen from './AnimationScreen';
+import ResultsScreen from './ResultsScreen';
 
 import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+
 
 class IntroScreen extends Component {
 
@@ -37,7 +40,7 @@ class IntroScreen extends Component {
 
 
 render() {
-   
+
       return (
 		<View>
 	    <Video
@@ -50,8 +53,8 @@ rate={1.0}
 ignoreSilentSwitch={"obey"}
 />
 
-        <Text style={styles.text_wellcome}>Wellcome to{"\n"}MANÉO</Text>
-    
+<Text style={styles.text_wellcome}>Wellcome to{"\n"}MANÉO</Text>
+
 
 		<TouchableOpacity style={styles.btn_learn_more}
 						             onPress={() => this.props.navigation.navigate('AnalyseDataScreen')}>
@@ -60,19 +63,22 @@ ignoreSilentSwitch={"obey"}
             <Text style={styles.text}>LEARN MORE</Text>
 
 		</TouchableOpacity>
-		
-		<TouchableOpacity style={styles.btn_scan_code} 
+
+		<TouchableOpacity style={styles.btn_scan_code}
 		                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
             <Text style={styles.text}>SCAN QR CODE</Text>
 		</TouchableOpacity>
 
        	</View>
 		);
-  
+
 }
 }
 
+
+
 const AppNavigator = createStackNavigator({
+
   Intro: {
     screen: IntroScreen,
   },
@@ -84,8 +90,20 @@ const AppNavigator = createStackNavigator({
         fontWeight: 'bold',
       },
     }),
-    
-    
+
+
+  },
+
+    AnimationScreen: {
+    screen: AnimationScreen,
+     navigationOptions: ({ navigation }) => ({
+      title: 'Animation Screen',
+       headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }),
+
+
   },
   QRCodeScreen: {
     screen: QRCodeScreen,
@@ -95,10 +113,16 @@ const AppNavigator = createStackNavigator({
         fontWeight: 'bold',
       },
     }),
-
-    
-    
-  },
+},
+ResultsScreen: {
+  screen: ResultsScreen,
+     navigationOptions: ({ navigation }) => ({
+    title: 'Results',
+     headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  }),
+},
   AnalyseDataScreen: {
     screen: AnalyseDataScreen,
     navigationOptions: ({ navigation }) => ({
@@ -108,11 +132,12 @@ const AppNavigator = createStackNavigator({
       },
     }),
 
-   
+
   },
 },{
 
 defaultNavigationOptions: {
+
       headerStyle: {
         backgroundColor: '#0099aa',
       },
@@ -129,4 +154,3 @@ defaultNavigationOptions: {
 );
 
 export default createAppContainer(AppNavigator);
-

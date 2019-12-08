@@ -20,14 +20,14 @@ constructor(props) {
 static navigationOptions = {
 		header: null,
   }
-  
+
    onBarCodeRead = e => {
    if (e.data == "pissme"){
        this.setState({ btn_visible: true});
 
    }
   };
-  
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,9 +38,10 @@ static navigationOptions = {
           onBarCodeRead={this.onBarCodeRead}
           ref={cam => (this.camera = cam)}
         >
-            
+
 		{this.state.btn_visible?
-		<View style={styles.container_column}> 
+    
+		<View style={styles.container_column}>
   		<Text style={styles.text_wellcome}>{this.state.text}</Text>
 		<TouchableOpacity style={styles.btn_scan_code} visible={this.state.btn_visible}
 		                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
@@ -50,12 +51,12 @@ static navigationOptions = {
 		:
   		null
 
-		}	
-		
-	
-	
-       
-        
+		}
+
+
+
+
+
         </RNCamera>
       </View>
     );

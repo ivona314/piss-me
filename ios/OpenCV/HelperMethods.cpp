@@ -351,8 +351,10 @@ vector<Point3f> HelperMethods::getColorSquares(Mat img, vector<vector<double>> c
   for (int i=0; i<12; i++){
     cout << "size: " <<  i*partHeight +squareHeight << endl;
       Mat imgSquare = img(Rect(squareOffset, i*partHeight+squareOffset, img.cols-squareOffset, squareHeight-squareOffset));
-      Mat calibrated = colorCalibrateImage(imgSquare, calibrationMatrix);
-      result.push_back(getAverageValues(calibrated));
+      //Mat calibrated = colorCalibrateImage(imgSquare, calibrationMatrix);
+      //result.push_back(getAverageValues(calibrated));
+    result.push_back(getAverageValues(imgSquare));
+
       rectangle(img, Point2f(squareOffset, i*partHeight+squareOffset), Point2f(img.cols-squareOffset, i*partHeight+squareHeight-squareOffset), cv::Scalar(0, 0, 255), 2);
   }
   return result;
