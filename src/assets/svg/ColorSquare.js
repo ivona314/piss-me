@@ -12,24 +12,17 @@ constructor () {
 
   }
 
-startAnimation = () => {
-    this.springValue.setValue(0.6)
-    Animated.spring(
-    this.springValue,
-    {
-      toValue: 1,
-      friction: 20,
-      tension: 10
-    }
-  ).start()
-  }
-
-  startAnimation3 = () => {
+  startAnimation = () => {
+    setInterval(() => {
       Animated.timing(this.moveAnimation, {
-        toValue: {x: -150, y: 45},
-        duration : 800,
+        toValue: {x: 0, y: 45},
+        duration : 1800,
 
-      }).start()
+      }).start();
+    },
+    // Define any blinking time.
+    1000);
+
     }
 
 
@@ -42,26 +35,19 @@ createSquares = () => {
       //Create the parent and add the children
       squares.push(<View style={{position: 'absolute',
 	     top: i*30+10,
-       left: 100,
+       left: 76,
        width:22,
        height: 22,
        backgroundColor:this.props.colors[i]}}/>)
     }
     return squares
   }
-  startAnimation2 = () => {
 
-  Animated.timing(10, {
-    toValue: 100,
-    easing: Easing.back(),
-    duration: 2000,
-  }).start();
-}
 
 	render() {
 	if (this.props.visible){
     if (!this.animationShowed){
-      this.startAnimation3();
+      this.startAnimation();
       this.animationShowed = true;
     }
     return (

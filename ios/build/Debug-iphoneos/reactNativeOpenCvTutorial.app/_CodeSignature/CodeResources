@@ -22,15 +22,15 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		ugZYHsJeOm0zHiFc3fnz9mgneyo=
+		zKvx+7IdVAtq15gY6T+DNAzw8F4=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib/objects-13.0+.nib</key>
 		<data>
-		rW8mEi92+d7M1i2CSZ3jZKoxsTI=
+		SdcEAvIp3RZW/5P63OtcTqEs1N4=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib/runtime.nib</key>
 		<data>
-		gj+LKA+n458AkmEsF4pe9CoEhCo=
+		2Fzzohpolko7/c9toa9RQcilrdo=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
 		<data>
-		9/129cVQeWoiQmS+twDpUs36w4s=
+		LqUzFCZacDOGh4lpkI1f3RjXdfo=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/XCTest.framework/XCTest</key>
 		<data>
-		7O0nT9/MU/yXq7mf/q61ZL2vS4Q=
+		CATIii3dVqg4RiWABq1rgnuKB1Q=
 		</data>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -75,11 +75,11 @@
 		</data>
 		<key>Frameworks/libXCTestBundleInject.dylib</key>
 		<data>
-		ApQB+4dl6LbL9aRdxCQWwP3BJuc=
+		1UYhhnY+P718/SYSjTKrUuIRRI0=
 		</data>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<data>
-		kW8lMJrf61tp53fWgvyy9ldxpME=
+		zU0x4kXabL/KrwZuQv8V7FbdVYY=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -95,7 +95,7 @@
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest.dSYM/Contents/Resources/DWARF/reactNativeOpenCvTutorialTests</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		FzSZm82Xyvf7eLO+I15S1G8Vju0=
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/Info.plist</key>
 		<data>
@@ -107,71 +107,7 @@
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/reactNativeOpenCvTutorialTests</key>
 		<data>
-		RAfvPce8uN0KQZpnWonUxBcV1Es=
-		</data>
-		<key>assets/app.json</key>
-		<data>
-		flsUO8ILSM5mKabxIOL7K0BBdyE=
-		</data>
-		<key>assets/node_modules/css-select/lib/procedure.json</key>
-		<data>
-		4NPpi1YiX218HlCgSBfSb0LKZL0=
-		</data>
-		<key>assets/node_modules/css-tree/dist/default-syntax.json</key>
-		<data>
-		UaN5v6fooUfVsvLXLmWdLxau88M=
-		</data>
-		<key>assets/node_modules/dom-serializer/foreignNames.json</key>
-		<data>
-		Q7YZPABq69isLTuNqqSlrl+Pl5Y=
-		</data>
-		<key>assets/node_modules/entities/lib/maps/decode.json</key>
-		<data>
-		rcozwu1J2hEWIx8o9MOeuVNnIP8=
-		</data>
-		<key>assets/node_modules/entities/lib/maps/entities.json</key>
-		<data>
-		nJuM2FOvnF16uoBR7CbmGoMDFQ8=
-		</data>
-		<key>assets/node_modules/entities/lib/maps/legacy.json</key>
-		<data>
-		Um3MVMTtwUsiBOVJOLFOQwfyW5s=
-		</data>
-		<key>assets/node_modules/entities/lib/maps/xml.json</key>
-		<data>
-		pbWR5Bqv/JI6KGeuvSOqpaNGoG4=
-		</data>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon-mask.png</key>
-		<data>
-		jpFiMACcZJsxxIbM+ov9qJ/Euvw=
-		</data>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon.png</key>
-		<data>
-		keLOi1inJdXs0IRSKnXqyhW57Aw=
-		</data>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@2x.png</key>
-		<data>
-		rSvG8m4uPMSItIcsIF+N2tDJD8U=
-		</data>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@3x.png</key>
-		<data>
-		8kFG8Vv7Hfrw4yVcFrhUhbHieBA=
-		</data>
-		<key>assets/src/assets/corner.png</key>
-		<data>
-		mVdW2t46DtRW0dC9OR00sJMSw6Y=
-		</data>
-		<key>assets/src/assets/good2.gif</key>
-		<data>
-		mBxWtByUb51cmzw6PN0IVBZhkF0=
-		</data>
-		<key>assets/src/assets/searching.gif</key>
-		<data>
-		JMTTIqNMYZc+vGC5//cci5Mp7LE=
-		</data>
-		<key>assets/src/assets/video.mp4</key>
-		<data>
-		rKbWYZKTRDanel/sUt2e14HkOto=
+		SrV9LSA84gmcMO46EyDlGIL0HmY=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -179,11 +115,7 @@
 		</data>
 		<key>ip.txt</key>
 		<data>
-		ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
-		</data>
-		<key>main.jsbundle</key>
-		<data>
-		/BHNEjaR0W9nnMYEB7WLHI7kLtM=
+		X3Zkh/kxsVpqqtlel8DLvUEkRfE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -236,33 +168,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ugZYHsJeOm0zHiFc3fnz9mgneyo=
+			zKvx+7IdVAtq15gY6T+DNAzw8F4=
 			</data>
 			<key>hash2</key>
 			<data>
-			0ca3XxSQCbMDNHMZCDssc8jlHiK5gz5w8k9HyYIE3Us=
+			HLAO54gl087OIp7KmH6BI9+kEdYWXGfnrxnIaMn040E=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rW8mEi92+d7M1i2CSZ3jZKoxsTI=
+			SdcEAvIp3RZW/5P63OtcTqEs1N4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ikFYWoT/xjLH/eHZ2qlOlqWWGaIjGEfUoCiq6KX8yPE=
+			SKFC6JOtlbwdom/VNNCXYMeEnb8usLxK3yvzE+dM/ls=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gj+LKA+n458AkmEsF4pe9CoEhCo=
+			2Fzzohpolko7/c9toa9RQcilrdo=
 			</data>
 			<key>hash2</key>
 			<data>
-			+Jd0VS8JPaVV4VF29pPLkAGBK+CWyF6SLLl6rM620NM=
+			nuPVpnVNgpSvPJPJsRpNxsGccPRi0nof8DeR4jYCx0o=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
@@ -280,11 +212,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9/129cVQeWoiQmS+twDpUs36w4s=
+			LqUzFCZacDOGh4lpkI1f3RjXdfo=
 			</data>
 			<key>hash2</key>
 			<data>
-			XNEWJ51rEnv03CIBIBzZblbsgjbcnENKoMr+6nM2ku4=
+			7H3dX7AF7k7ZPUGAJzTEIriccqeIZ0hmdZoIicx/SfI=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
@@ -324,11 +256,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7O0nT9/MU/yXq7mf/q61ZL2vS4Q=
+			CATIii3dVqg4RiWABq1rgnuKB1Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			BAVpRrMJ8yI47lHUOWIRJ7WOPbMBsnefADnLnl5h2FE=
+			Eqnex00s7zscLVtVeLzTvGcBfsvS3iecH4b9CHaDkjg=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
@@ -370,22 +302,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ApQB+4dl6LbL9aRdxCQWwP3BJuc=
+			1UYhhnY+P718/SYSjTKrUuIRRI0=
 			</data>
 			<key>hash2</key>
 			<data>
-			qH6H4r192KpRWPhArDsNPf7JlwYIj0pTaPy0rvj1FlI=
+			VhWl6Md0x4jGKzGvKWX4kyQc//pK/OnP2EDcGNPGTQk=
 			</data>
 		</dict>
 		<key>Frameworks/libXCTestSwiftSupport.dylib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kW8lMJrf61tp53fWgvyy9ldxpME=
+			zU0x4kXabL/KrwZuQv8V7FbdVYY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ub/jMHZnYDn7983zHEI+NR0UMWb7M5Hsw1ocOJPgvXc=
+			UzBGzwTp4yYev6koFJGeVzb9MIhgSAb8+mQ8lGV3MJs=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest.dSYM/Contents/Info.plist</key>
@@ -403,11 +335,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			FzSZm82Xyvf7eLO+I15S1G8Vju0=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			vIDaei1uKdYmVcDglbjNZc2XmUmE2pbSV1h7Ucsl6/Y=
 			</data>
 		</dict>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/Info.plist</key>
@@ -436,187 +368,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RAfvPce8uN0KQZpnWonUxBcV1Es=
+			SrV9LSA84gmcMO46EyDlGIL0HmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			CClTfGM3ZNsQpgNCPx1mdg0T5G7Ktw5j9sSRkFtBehc=
-			</data>
-		</dict>
-		<key>assets/app.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			flsUO8ILSM5mKabxIOL7K0BBdyE=
-			</data>
-			<key>hash2</key>
-			<data>
-			XJm7r8LMqLS+GlVOfIZBV6k1uiLn6r8s7WMs0525jyw=
-			</data>
-		</dict>
-		<key>assets/node_modules/css-select/lib/procedure.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4NPpi1YiX218HlCgSBfSb0LKZL0=
-			</data>
-			<key>hash2</key>
-			<data>
-			HQw+N5LPHUe/NOBHrsqEeNJYGULySPHl4FU7bLLPz8I=
-			</data>
-		</dict>
-		<key>assets/node_modules/css-tree/dist/default-syntax.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UaN5v6fooUfVsvLXLmWdLxau88M=
-			</data>
-			<key>hash2</key>
-			<data>
-			OulUHvdhua35FCGvUgnNWneicE7N/5dZGwaPuFtqFhE=
-			</data>
-		</dict>
-		<key>assets/node_modules/dom-serializer/foreignNames.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Q7YZPABq69isLTuNqqSlrl+Pl5Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			F47y2pAqqZKLeFOAldUr0Blj44tDcNghIErhEu+H8tM=
-			</data>
-		</dict>
-		<key>assets/node_modules/entities/lib/maps/decode.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rcozwu1J2hEWIx8o9MOeuVNnIP8=
-			</data>
-			<key>hash2</key>
-			<data>
-			0oabSUnl0mfLgD4w+tvbe2oYxYwBNBfF8+8UlZerxt8=
-			</data>
-		</dict>
-		<key>assets/node_modules/entities/lib/maps/entities.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			nJuM2FOvnF16uoBR7CbmGoMDFQ8=
-			</data>
-			<key>hash2</key>
-			<data>
-			1o9pLgpYQ5nCADtGee8XjmjL51Swe46yQqY0w3V7WVU=
-			</data>
-		</dict>
-		<key>assets/node_modules/entities/lib/maps/legacy.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Um3MVMTtwUsiBOVJOLFOQwfyW5s=
-			</data>
-			<key>hash2</key>
-			<data>
-			4Lys5I8NkQx3eLTmBSlbSPZpWJYYJYe42rSsnNcHrKc=
-			</data>
-		</dict>
-		<key>assets/node_modules/entities/lib/maps/xml.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pbWR5Bqv/JI6KGeuvSOqpaNGoG4=
-			</data>
-			<key>hash2</key>
-			<data>
-			IwhJjlevRGwvnDTl5xDxhAHVwNzgTKzYvCIepGQkzCo=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon-mask.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jpFiMACcZJsxxIbM+ov9qJ/Euvw=
-			</data>
-			<key>hash2</key>
-			<data>
-			3BOFxJPrVIOr2o/UlYerJGXuSikHgRJCsx/hu/CYWX4=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			keLOi1inJdXs0IRSKnXqyhW57Aw=
-			</data>
-			<key>hash2</key>
-			<data>
-			LN/rjlzN55dvcBL7jM5zryIpAp7iHU8VCf7RFIccbNg=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rSvG8m4uPMSItIcsIF+N2tDJD8U=
-			</data>
-			<key>hash2</key>
-			<data>
-			K3RDqaWOksoRpXW9wRWYYVpX3eMFzYznDWAmBrMCzZg=
-			</data>
-		</dict>
-		<key>assets/node_modules/react-navigation-stack/lib/module/views/assets/back-icon@3x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8kFG8Vv7Hfrw4yVcFrhUhbHieBA=
-			</data>
-			<key>hash2</key>
-			<data>
-			Pd0Hc+0n4j0leJ8wFzGzrEVa2L5aonoKG4OPicbSciU=
-			</data>
-		</dict>
-		<key>assets/src/assets/corner.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mVdW2t46DtRW0dC9OR00sJMSw6Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			72I57290/5d+4Qu/Q9qeAbb7PXBXZ3qExjS5ZVepjOc=
-			</data>
-		</dict>
-		<key>assets/src/assets/good2.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mBxWtByUb51cmzw6PN0IVBZhkF0=
-			</data>
-			<key>hash2</key>
-			<data>
-			DMA/mh0DXa0dIFQilqRL1n91kKYnVUMRD+3KNa3+WyY=
-			</data>
-		</dict>
-		<key>assets/src/assets/searching.gif</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JMTTIqNMYZc+vGC5//cci5Mp7LE=
-			</data>
-			<key>hash2</key>
-			<data>
-			5fjDdbZB0KA5hqNUSHml64UAQ70myJBmpasmlpuJ6vE=
-			</data>
-		</dict>
-		<key>assets/src/assets/video.mp4</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rKbWYZKTRDanel/sUt2e14HkOto=
-			</data>
-			<key>hash2</key>
-			<data>
-			QrjfbE/zZcW4AR6Mb1zOzWVApCcrzQM+pa1ZAUo8NzY=
+			GFSDNtXbJV2Wia0DG6k2S4jp2I7S/sbbAbg0RAQHH94=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -634,22 +390,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ozjq+Gm3ox4t3fWvDnIVr6e9zaU=
+			X3Zkh/kxsVpqqtlel8DLvUEkRfE=
 			</data>
 			<key>hash2</key>
 			<data>
-			kiT8ivudM1CBS7ZWBwtafCMtt6EEUwE0qwu4dUHHjkM=
-			</data>
-		</dict>
-		<key>main.jsbundle</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/BHNEjaR0W9nnMYEB7WLHI7kLtM=
-			</data>
-			<key>hash2</key>
-			<data>
-			ymc3kpUKMetsdOqx/06QOOvjooflHg8cOJOVkbeY5IA=
+			AjjhGZJlP6vlTrAuGrBuIzhNGlQp9tUbU+sr8Rw2u/o=
 			</data>
 		</dict>
 	</dict>

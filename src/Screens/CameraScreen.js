@@ -6,7 +6,9 @@ import {
   Platform,
   Image,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
+
 import { RNCamera as Camera } from 'react-native-camera';
 import Toast, {DURATION} from 'react-native-easy-toast'
 import {NativeModules, Dimensions} from 'react-native';
@@ -43,13 +45,11 @@ class CameraScreen extends Component {
       this.takePicture();
     },
     // Define any blinking time.
-    2000);
+    1000);
 
-    setTimeout(() => {
-      this.setState({whiteBackgroundVisible: true});
-    },
-    // Define any blinking time.
-    200000);
+
+
+
 
 
   }
@@ -108,14 +108,20 @@ class CameraScreen extends Component {
 
       		//resolve(dataArray[1])
       		let str = dataArray[0][0];
-      		if (dataArray[0][0] != 0){
+      		if (dataArray[0][0] != 0 && this.state.loadingVisible){
+            setTimeout(() => {
+                this.setState({showColorSquares: true});
+            },
+            // Define any blinking time.
+            100);
             this.setState({whiteBackgroundVisible: true});
-            this.setState({showColorSquares: true});
+          
+
             this.setState({ loadingVisible: false});
-				        this.setState({colors: []});
+				    this.setState({colors: []});
       			for (var i=0; i<12; i++){
       				let colorstr = 'rgb(' + dataArray[i][2] + ',' + dataArray[i][1] + ',' + dataArray[i][0] + ')';
-					this.setState({ colors: [...this.state.colors, colorstr] });
+					    this.setState({ colors: [...this.state.colors, colorstr] });
       			}
       		}
 
@@ -221,8 +227,10 @@ class CameraScreen extends Component {
         <Camera
           ref={cam => {
             this.camera = cam;
+
           }}
           style={styles.preview}
+          playSoundOnCapture={true}
 
         >
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topLeftCorner} source={require('../assets/corner.png')}/>

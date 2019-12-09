@@ -24,6 +24,7 @@ import ResultsScreen from './ResultsScreen';
 import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import Sound from 'react-native-sound';
 
 
 class IntroScreen extends Component {
@@ -31,16 +32,22 @@ class IntroScreen extends Component {
  static navigationOptions = {
 		header: null,
   }
+
   constructor(props) {
     super(props);
+  }
+
+
+  sound = new Sound('sound.mp3');
+
+    playSound = () => {
+        this.sound.play()
     }
 
 
 
 
-
 render() {
-
       return (
 		<View>
 	    <Video
@@ -57,7 +64,7 @@ ignoreSilentSwitch={"obey"}
 
 
 		<TouchableOpacity style={styles.btn_learn_more}
-						             onPress={() => this.props.navigation.navigate('AnalyseDataScreen')}>
+						             onPress={() =>{this.playSound}}>
 
 
             <Text style={styles.text}>LEARN MORE</Text>
