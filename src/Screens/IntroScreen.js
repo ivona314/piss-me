@@ -12,7 +12,7 @@ import {
 import Toast, {DURATION} from 'react-native-easy-toast'
 import {NativeModules, Dimensions} from 'react-native';
 
-import styles from '../Styles/Screens/CameraScreen';
+import styles from '../Styles/Screens/IntroScreenStyles';
 
 import OpenCV from '../NativeModules/OpenCV';
 import CameraScreen from './CameraScreen';

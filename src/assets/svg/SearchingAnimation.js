@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {Image} from 'react-native';
-import styles from '../../Styles/Screens/CameraScreen';
+import styles from '../../Styles/Screens/CameraScreenStyles';
 
 
 export default class SearchingAnimation extends Component {
@@ -14,7 +14,7 @@ export default class SearchingAnimation extends Component {
 		} else {
 			return(null);
 		}
-		
+
 	}
 
 }

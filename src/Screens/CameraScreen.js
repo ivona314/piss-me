@@ -6,14 +6,14 @@ import {
   Platform,
   Image,
   TouchableOpacity,
-  Alert,
+  ActivityIndicator,
 } from 'react-native';
 
 import { RNCamera as Camera } from 'react-native-camera';
 import Toast, {DURATION} from 'react-native-easy-toast'
 import {NativeModules, Dimensions} from 'react-native';
 
-import styles from '../Styles/Screens/CameraScreen';
+import styles from '../Styles/Screens/CameraScreenStyles';
 import OpenCV from '../NativeModules/OpenCV';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
 import ColorSquare from '../assets/svg/ColorSquare';
@@ -109,20 +109,19 @@ class CameraScreen extends Component {
       		//resolve(dataArray[1])
       		let str = dataArray[0][0];
       		if (dataArray[0][0] != 0 && this.state.loadingVisible){
-            setTimeout(() => {
-                this.setState({showColorSquares: true});
-            },
-            // Define any blinking time.
-            100);
+            this.setState({showColorSquares: true});
             this.setState({whiteBackgroundVisible: true});
-          
-
             this.setState({ loadingVisible: false});
 				    this.setState({colors: []});
       			for (var i=0; i<12; i++){
       				let colorstr = 'rgb(' + dataArray[i][2] + ',' + dataArray[i][1] + ',' + dataArray[i][0] + ')';
 					    this.setState({ colors: [...this.state.colors, colorstr] });
       			}
+            setTimeout(() => {
+              this.props.navigation.navigate('ResultsScreen')
+            },
+            // Define any blinking time.
+            1500);
       		}
 
 
@@ -244,11 +243,15 @@ class CameraScreen extends Component {
         <WhiteBackground visible={this.state.whiteBackgroundVisible}/>
 
 		<ColorSquare colors={this.state.colors} visible={this.state.showColorSquares} top={30}/>
-        {/* <Toast ref="toast" position="center" /> */}
+    {/*
+    <ActivityIndicator style={[styles.spinner]} size="large" color="#000000">
+    </ActivityIndicator>
+        <Toast ref="toast" position="center" /> */}
       </View>
     );
   }
 }
+
 
 const AppNavigator = createStackNavigator({
   CameraScreen: {

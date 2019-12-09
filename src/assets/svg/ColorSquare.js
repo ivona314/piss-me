@@ -20,19 +20,12 @@ constructor () {
 
       }).start();
     },
-    // Define any blinking time.
     1000);
-
     }
-
-
-
 
 createSquares = () => {
     let squares = []
-    // Outer loop to create parent
     for (let i = 0; i < 12; i++) {
-      //Create the parent and add the children
       squares.push(<View style={{position: 'absolute',
 	     top: i*30+10,
        left: 76,
@@ -60,14 +53,9 @@ createSquares = () => {
        ]
      }}>
       {this.createSquares()}
-    </Animated.View>
-
-    );
+    </Animated.View>);
     } else {
-    return (
-    null
-
-    );
+      return (null);
     }
   }
 
