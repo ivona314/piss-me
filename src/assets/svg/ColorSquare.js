@@ -15,12 +15,12 @@ constructor () {
   startAnimation = () => {
     setInterval(() => {
       Animated.timing(this.moveAnimation, {
-        toValue: {x: 0, y: 45},
-        duration : 1800,
+        toValue: {x: 0, y: 1000},
+        duration : 1000,
 
       }).start();
     },
-    1000);
+    1600);
     }
 
 createSquares = () => {

@@ -7,6 +7,7 @@ export default class WhiteBackground extends Component {
 
 constructor () {
     super();
+
     this.state={
          animation : new Animated.Value(0),
        }
@@ -29,6 +30,7 @@ constructor () {
 
 
 
+
 	render() {
     const animatedStyle ={
       opacity : this.state.animation
@@ -41,8 +43,7 @@ constructor () {
 
       return (
         <Animated.View style={[styles.background, animatedStyle]}>
-        <Animated.View style={[styles.strip, animatedStyle]}/>
-
+      
         </Animated.View>
 
       );

@@ -70,13 +70,14 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   Mat imgEdges = helperMethods.getEdgeImage(croppedImage);
   UIImage* store2 = [self convertMatToUIImage:imgEdges];
   //UIImageWriteToSavedPhotosAlbum(store2, nil, nil, nil);
-
+/*
   Mat imgStrip = helperMethods.getStripImageDebug(croppedImage);
   UIImage* store3;
   if (imgStrip.cols>0){
      store3 = [self convertMatToUIImage:imgStrip];
 
   }
+ */
 
 
 

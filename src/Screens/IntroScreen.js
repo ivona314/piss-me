@@ -7,6 +7,8 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  Animated,
+  Easing
 } from 'react-native';
 
 import Toast, {DURATION} from 'react-native-easy-toast'
@@ -25,6 +27,7 @@ import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Sound from 'react-native-sound';
+
 
 
 class IntroScreen extends Component {
@@ -82,7 +85,24 @@ ignoreSilentSwitch={"obey"}
 }
 }
 
+const fade = (props) => {
+    const {position, scene} = props
 
+    const index = scene.index
+
+    const translateX = 0
+    const translateY = 0
+
+    const opacity = position.interpolate({
+        inputRange: [index - 0.7, index, index + 0.7],
+        outputRange: [0.3, 1, 0.3]
+    })
+
+    return {
+        opacity,
+        transform: [{translateX}, {translateY}]
+    }
+}
 
 const AppNavigator = createStackNavigator({
 
@@ -155,6 +175,11 @@ defaultNavigationOptions: {
       },
     },
 
+    transitionConfig: () => ({
+        screenInterpolator: (props) => {
+            return fade(props)
+        }
+    })
 
 }
 

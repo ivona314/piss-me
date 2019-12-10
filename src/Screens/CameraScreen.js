@@ -17,6 +17,8 @@ import styles from '../Styles/Screens/CameraScreenStyles';
 import OpenCV from '../NativeModules/OpenCV';
 import SearchingAnimation from '../assets/svg/SearchingAnimation';
 import ColorSquare from '../assets/svg/ColorSquare';
+import Strip from '../assets/svg/Strip';
+
 import AnalyseDataScreen from './AnalyseDataScreen';
 import ResultsScreen from './ResultsScreen';
 import WhiteBackground from './WhiteBackground';
@@ -42,7 +44,7 @@ class CameraScreen extends Component {
     this.repeatPhoto = this.repeatPhoto.bind(this);
     this.usePhoto = this.usePhoto.bind(this);
     setInterval(() => {
-      this.takePicture();
+        this.takePicture();
     },
     // Define any blinking time.
     1000);
@@ -121,7 +123,7 @@ class CameraScreen extends Component {
               this.props.navigation.navigate('ResultsScreen')
             },
             // Define any blinking time.
-            1500);
+            2600);
       		}
 
 
@@ -164,7 +166,7 @@ class CameraScreen extends Component {
   }
 
   async takePicture() {
-    if (this.camera) {
+    if (this.camera && this.state.loadingVisible) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
       this.setState({
@@ -236,11 +238,12 @@ class CameraScreen extends Component {
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomLeftCorner} source={require('../assets/corner.png')}/>
         <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomRightCorner} source={require('../assets/corner.png')}/>
-			<SearchingAnimation visible={this.state.loadingVisible}/>
+			{/*<SearchingAnimation visible={this.state.loadingVisible}/> */}
          	<FoundAnimation visible={this.state.foundVisible}/>
 
         </Camera>
         <WhiteBackground visible={this.state.whiteBackgroundVisible}/>
+        <Strip visible={this.state.whiteBackgroundVisible}/>
 
 		<ColorSquare colors={this.state.colors} visible={this.state.showColorSquares} top={30}/>
     {/*
