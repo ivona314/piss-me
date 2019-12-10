@@ -123,7 +123,7 @@ class CameraScreen extends Component {
               this.props.navigation.navigate('ResultsScreen')
             },
             // Define any blinking time.
-            2600);
+            2400);
       		}
 
 

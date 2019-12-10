@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import ColorSquare from '../assets/svg/ColorSquare';
+import ResultsCarousel from '../assets/svg/ResultsCarousel';
 import styles from '../Styles/Screens/ResultsScreenStyles';
 
 
@@ -24,6 +24,7 @@ static navigationOptions = {
   render() {
     return (
       <View style={styles.container}>
+        <ResultsCarousel/>
       </View>
     );
   }

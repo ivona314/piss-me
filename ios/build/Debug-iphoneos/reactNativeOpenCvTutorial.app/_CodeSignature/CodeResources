@@ -107,11 +107,15 @@
 		</data>
 		<key>PlugIns/reactNativeOpenCvTutorialTests.xctest/reactNativeOpenCvTutorialTests</key>
 		<data>
-		OpNLkWhQuvWqEPkUbvl8UfRqrRM=
+		LZDRh8h/J6XJwpEjgdC41kKuUPs=
 		</data>
 		<key>assets/app.json</key>
 		<data>
 		flsUO8ILSM5mKabxIOL7K0BBdyE=
+		</data>
+		<key>assets/node_modules/css-color-keywords/colors.json</key>
+		<data>
+		1t474kL2KyUhIoTe7n+xjfrb+jQ=
 		</data>
 		<key>assets/node_modules/css-select/lib/procedure.json</key>
 		<data>
@@ -183,7 +187,7 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		NA5p0eE+MBY+LQtgEw2+D5YsrLQ=
+		C/brVJF56DTw6hf/LEaQaa2kPa4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -436,11 +440,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OpNLkWhQuvWqEPkUbvl8UfRqrRM=
+			LZDRh8h/J6XJwpEjgdC41kKuUPs=
 			</data>
 			<key>hash2</key>
 			<data>
-			KBrJJjxI8EwAgJtQRQ/U5BpHd32JBj8UdEN7Mm5mqns=
+			J48z7sLRSQxrdjrzEALjmSiQ0fAKbrwEpGi8pQNA0JQ=
 			</data>
 		</dict>
 		<key>assets/app.json</key>
@@ -452,6 +456,17 @@
 			<key>hash2</key>
 			<data>
 			XJm7r8LMqLS+GlVOfIZBV6k1uiLn6r8s7WMs0525jyw=
+			</data>
+		</dict>
+		<key>assets/node_modules/css-color-keywords/colors.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1t474kL2KyUhIoTe7n+xjfrb+jQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			NU8YFuguOqQH1Uk6Wf919tBz0Y4520jnkrO96VFBn/U=
 			</data>
 		</dict>
 		<key>assets/node_modules/css-select/lib/procedure.json</key>
@@ -645,11 +660,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NA5p0eE+MBY+LQtgEw2+D5YsrLQ=
+			C/brVJF56DTw6hf/LEaQaa2kPa4=
 			</data>
 			<key>hash2</key>
 			<data>
-			pWfDmIylZ+w6d9Kmrg7geM5SnDv8+ncAefE9yVAOmuQ=
+			AQfEKC9h1pgm/0c0gyaFXO4lhLVqYwJAPDbnZ+qvf84=
 			</data>
 		</dict>
 	</dict>
