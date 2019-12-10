@@ -198,18 +198,23 @@ vector<Point3f> HelperMethods::getMarkerCenters(Mat imgGray){
     vector<float> yPoints;
     
 
-
+/*
     for( size_t i = 0; i < circles.size(); i++ )
     {
         Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
         int radius = cvRound(circles[i][2]);
         circle( imgGray, center, radius, Scalar(255), 3, 8, 0 );
     }
+ */
 
     if (circles.size() == 4) {
         for (int i = 0; i < circles.size(); i++) {
+          if (cvRound(circles[i][0]) > 0 && cvRound(circles[i][1]) > 0){
             xPoints.push_back(cvRound(circles[i][0]));
             yPoints.push_back(cvRound(circles[i][1]));
+          } else {
+            return result;
+          }
         }
 
         sort(xPoints.begin(), xPoints.end());
