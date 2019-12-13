@@ -5,7 +5,9 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: "row",
+    backgroundColor:'rgb(150, 230, 255)',
+
   },
 
 });

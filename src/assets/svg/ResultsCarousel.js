@@ -3,9 +3,8 @@ import React, { Component,  useState, useEffect } from 'react';
 import styled from "styled-components/native"; // 3.1.6
 import Carousel from 'react-native-snap-carousel'; // 3.6.0
 import { VictoryPie, VictoryChart } from 'victory-native';
-import {View, Text,   LayoutAnimation,   Animated, } from 'react-native';
+import {View, Text,   LayoutAnimation,   Animated, ImageBackground} from 'react-native';
 import styles from '../../Styles/Screens/ResultsCarouselStyles';
-
 export default class ResultsCarousel extends Component {
 
   constructor(props){
@@ -19,25 +18,28 @@ export default class ResultsCarousel extends Component {
     this.graphicColor = ['#388087', '#6fb3b8', '#badfe7'];
     this.animationShowed = false;
     setTimeout(() => {
-        this.setState({
-          graphicData : [{ y: 100, label: " " }, { y: 50, label: " "  }],
-          });
-          this.startAnimation();
+      let oldParams = [...this.state.parameters];
+      oldParams[0].initialData = [{ y: 70, label: " " }, { y: 30, label: " "  }],
+      this.setState({
+        parameters: oldParams
+
+        });
+        this.startAnimation(0);
 
     },
     // Define any blinking time.
     1000);
   }
 
-  startAnimation=()=>{
+  startAnimation=(index)=>{
 
-    Animated.timing(this.state.animation, {
+    Animated.timing(this.state.parameters[index].animation, {
       toValue : 0,
       timing : 0
     }).start(()=>{
-      Animated.timing(this.state.animation,{
+      Animated.timing(this.state.parameters[index].animation,{
         toValue : 1,
-        duration : 1500
+        duration : 800
       }).start();
     })
   }
@@ -45,23 +47,56 @@ export default class ResultsCarousel extends Component {
 
   init(){
     this.state = {
-      animation : new Animated.Value(0),
       parameters: [
         {
           id: "Hydration",
-          thumbnail: "https://img.youtube.com/vi/D9ioyEvdggk/hqdefault.jpg",
-          title: "Led Zeppelin - Stairway To Heaven"
+          initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 70, label: " " }, { y: 30, label: " "  }],
+          description : "Staying hydrated is important to your overall, good health. It helps maintain your temperature, remove waste from your body, and lubricate your joints.",
+          animationShown: true,
+          animation: new Animated.Value(0),
+          backgroundImage: require("../water.jpg"),
+
         }, {
-          id: "Acidic",
-          thumbnail: "https://img.youtube.com/vi/sNPnbI1arSE/hqdefault.jpg",
-          title: "Eminem - My Name Is"
+          id: "pH",
+          initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 30, label: " " }, { y: 100, label: " "  }],
+          description : "Your body’s pH balance, also referred to as its acid-base balance, is the level of acids and bases in your blood at which your body functions best.",
+          animationShown: false,
+          animation: new Animated.Value(0),
+          backgroundImage: require("../water.jpg"),
         }, {
           id: "Kidneys",
-          thumbnail: "https://img.youtube.com/vi/VOgFZfRVaww/hqdefault.jpg",
-          title: ""
+          initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 40, label: " " }, { y: 100, label: " "  }],
+          description : "Kidneys have several extremely important functions. Their main tasks are to filter waste substances out of your blood and balance the levels of salts and water in your body.",
+          animationShown: false,
+          animation: new Animated.Value(0),
+          backgroundImage: require("../water.jpg"),
+
+        }, {
+          id: "Immunity",
+          initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 90, label: " " }, { y: 100, label: " "  }],
+          description : "The immune system defends our body against invaders, such as viruses, bacteria, and foreign bodies.",
+          animationShown: false,
+          animation: new Animated.Value(0),
+          backgroundImage: require("../water.jpg"),
+
+        }, {
+          id: "Energy",
+          initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 50, label: " " }, { y: 100, label: " "  }],
+          description : "Body energy is important for your overall wellness.",
+          animationShown: false,
+          animation: new Animated.Value(0),
+          backgroundImage: require("../water.jpg"),
+
+
+
+
         }
       ],
-      graphicData : [{ y: 0, label: " " }, { y: 50, label: " " }],
 
     };
 
@@ -71,36 +106,61 @@ export default class ResultsCarousel extends Component {
 
   _renderItem = ( {item, index} ) => {
     console.log("rendering,", index, item)
-    const animatedStyle ={
-      opacity : this.state.animation
-    }
-    return (
-      <View style={styles.container}>
-      <Text style={styles.title}>{item.id}</Text>
-      <Animated.Text style={[styles.percentage_text, animatedStyle]}>7/10</Animated.Text>
 
-      <VictoryPie  animate={{ duration: 2000 }} data={this.state.graphicData} width={300} height={300} colorScale={this.graphicColor} innerRadius={50} />
-    </View>
+    const animatedStyle ={
+      opacity : this.state.parameters[index].animation
+    }
+
+    return (
+
+      <View style={styles.container}>
+
+      <Text style={styles.title}>{item.id}</Text>
+      <Animated.Text style={[styles.percentage_text, animatedStyle]}>{item.data[0].y/10}/10</Animated.Text>
+      <VictoryPie  animate={{ duration: 2000 }} data={item.initialData} width={300} height={300} colorScale={this.graphicColor} innerRadius={50} />
+      <Text style={styles.description_text}>{item.description}</Text>
+
+      </View>
+
+
+
     );
   }
+
+  carouselSnap(index) {
+
+      if (!this.state.parameters[index].animationShown){
+        this.startAnimation(index);
+      }
+
+      let oldParams = [...this.state.parameters];
+      oldParams[index].initialData = this.state.parameters[index].data,
+      oldParams[index].animationShown = true,
+
+      this.setState({
+        parameters: oldParams
+      });
+
+  }
+
 
   render = () => {
 
     return (
-      <CarouselBackgroundView>
         <Carousel
-
-
-        animate={{ duration: 2000 }}
+          style={styles.carousel}
+          animate={{ duration: 2000 }}
           ref={ (c) => { this._carousel = c; } }
           data={this.state.parameters}
           renderItem={this._renderItem.bind(this)}
           sliderWidth={400}
           itemWidth={300}
-          layout={'default'}
           firstItem={0}
+          layout={'default'}
+          layoutCardOffset={260}
+          onSnapToItem={index => this.carouselSnap(index)}
+
         />
-      </CarouselBackgroundView>
     );
   }
 }
@@ -108,6 +168,6 @@ export default class ResultsCarousel extends Component {
 
 const CarouselBackgroundView = styled.View`
   background-color: white;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
 `

@@ -76,7 +76,7 @@ ignoreSilentSwitch={"obey"}
 
 		<TouchableOpacity style={styles.btn_scan_code}
 		                     onPress={() => this.props.navigation.navigate('ResultsScreen')}>
-            <Text style={styles.text}>SCAN QR CODE</Text>
+            <Text style={styles.text}>SCAN THE STRIP</Text>
 		</TouchableOpacity>
 
        	</View>
