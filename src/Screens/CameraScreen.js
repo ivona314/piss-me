@@ -48,12 +48,6 @@ class CameraScreen extends Component {
     },
     // Define any blinking time.
     1000);
-
-
-
-
-
-
   }
 
 

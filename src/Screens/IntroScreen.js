@@ -75,7 +75,7 @@ ignoreSilentSwitch={"obey"}
 		</TouchableOpacity>
 
 		<TouchableOpacity style={styles.btn_scan_code}
-		                     onPress={() => this.props.navigation.navigate('ResultsScreen')}>
+		                     onPress={() => this.props.navigation.navigate('CameraScreen')}>
             <Text style={styles.text}>SCAN THE STRIP</Text>
 		</TouchableOpacity>
 
