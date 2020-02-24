@@ -29,6 +29,7 @@ public:
   Mat drawMarkerCenters(Mat imgGray);
   Mat getEdgeImage(Mat img);
   Mat getStripImageDebug(Mat img);
+  Mat getColorSquaresDebug(Mat img);
 
    
     

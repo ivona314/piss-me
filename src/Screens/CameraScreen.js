@@ -114,7 +114,7 @@ class CameraScreen extends Component {
 					    this.setState({ colors: [...this.state.colors, colorstr] });
       			}
             setTimeout(() => {
-              this.props.navigation.navigate('ResultsScreen')
+              this.props.navigation.navigate('ResultsScreen', {data: dataArray})
             },
             // Define any blinking time.
             2400);
@@ -228,10 +228,13 @@ class CameraScreen extends Component {
           playSoundOnCapture={true}
 
         >
-        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topLeftCorner} source={require('../assets/corner.png')}/>
-        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner.png')}/>
-        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomLeftCorner} source={require('../assets/corner.png')}/>
-        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomRightCorner} source={require('../assets/corner.png')}/>
+        <Text style={{fontSize: 18, color: '#ffffff', bottom:300, textAlign: 'center',}}>Place the strip{"\n"} here </Text>
+
+        <View style={{position: 'absolute', top: 40, left: 115, width:145, height:525, borderRadius: 10,  backgroundColor:'rgba(0, 0, 0, 0.2)'}}/>
+        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topLeftCorner} source={require('../assets/corner_2.png')}/>
+        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.topRightCorner} source={require('../assets/corner_2.png')}/>
+        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomLeftCorner} source={require('../assets/corner_2.png')}/>
+        <Image style={Platform.OS === 'android' ? styles.androidImg : styles.bottomRightCorner} source={require('../assets/corner_2.png')}/>
 			{/*<SearchingAnimation visible={this.state.loadingVisible}/> */}
          	<FoundAnimation visible={this.state.foundVisible}/>
 

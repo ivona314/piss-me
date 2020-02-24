@@ -67,17 +67,22 @@ RCT_EXPORT_METHOD(checkPixels:(NSString *)imageAsBase64
   UIImage* store1 = [self convertMatToUIImage:croppedImage];
   //UIImageWriteToSavedPhotosAlbum(store1, nil, nil, nil);
   cv::cvtColor(croppedImage, croppedImage, CV_BGRA2BGR);
-  Mat imgEdges = helperMethods.getEdgeImage(croppedImage);
+  Mat imgEdges = helperMethods.getEdgeImage(croppedImage.clone());
   UIImage* store2 = [self convertMatToUIImage:imgEdges];
   //UIImageWriteToSavedPhotosAlbum(store2, nil, nil, nil);
-/*
-  Mat imgStrip = helperMethods.getStripImageDebug(croppedImage);
-  UIImage* store3;
-  if (imgStrip.cols>0){
-     store3 = [self convertMatToUIImage:imgStrip];
 
+  Mat imgStrip = helperMethods.getStripImageDebug(croppedImage.clone());
+  if (imgStrip.cols > 0){
+    Mat imgWithSquares = helperMethods.getColorSquaresDebug(imgStrip.clone());
+    cv::cvtColor(imgWithSquares, imgWithSquares, CV_BGR2BGRA);
+
+    UIImage* store3;
+    if (imgStrip.cols>0){
+       store3 = [self convertMatToUIImage:imgWithSquares];
+    }
   }
- */
+  
+ 
 
 
 

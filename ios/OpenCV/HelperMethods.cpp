@@ -10,7 +10,13 @@
 using namespace cv;
 using namespace std;
 
-int scalingFactor = 1;
+float scalingFactor = 1.0;
+int topStripOffset = 60; //pixel position of the first color on the strip
+int bottomStripOffset = 50; //pixel position of the last bottom color on the strip
+int spaceBetweenSquares = 35;
+int squareHeight = 90;
+int squareOffset = 10;
+
 
 Mat HelperMethods::colorCalibrateImage(Mat original, vector<vector<double>> originalColor, vector<vector<double>> measuredColor, int noOfColors){
   vector<vector<double>> calibrationMatrix = findTransformation(originalColor, measuredColor, noOfColors);
@@ -334,6 +340,7 @@ Mat HelperMethods::getStripImage(Mat imgTransformed){
   cout << "rho2:" << rho2 << endl;
   
   Mat result;
+  cout << "imgGrayTransformed.rows " << imgGrayTransformed.rows << endl;
   if (rho1 < rho2){
       Rect newROI(rho1, 0, rho2-rho1,imgGrayTransformed.rows);
       result = imgTransformed(newROI);
@@ -346,22 +353,24 @@ Mat HelperMethods::getStripImage(Mat imgTransformed){
 
 vector<Point3f> HelperMethods::getColorSquares(Mat img, vector<vector<double>> calibrationMatrix){
   vector<Point3f> result;
-  int noOfColors = 12;
-  float partHeight = img.rows/12;
-  float ratio = 50.0/63;
-  float squareHeight = ratio * partHeight;
-  float spaceHeight = partHeight - squareHeight;
-  int squareOffset = 1/scalingFactor;
-  cout << "cols:" << img.cols << endl;
-  for (int i=0; i<12; i++){
-    cout << "size: " <<  i*partHeight +squareHeight << endl;
-      Mat imgSquare = img(Rect(squareOffset, i*partHeight+squareOffset, img.cols-squareOffset, squareHeight-squareOffset));
-      //Mat calibrated = colorCalibrateImage(imgSquare, calibrationMatrix);
-      //result.push_back(getAverageValues(calibrated));
-    result.push_back(getAverageValues(imgSquare));
+     int noOfColors = 12;
+   float partHeight = (img.rows - topStripOffset - bottomStripOffset + spaceBetweenSquares)/12.0;
+   float ratio = squareHeight/float(squareHeight + spaceBetweenSquares);
+   float squareHeight = ratio * partHeight;
+   int topOffset = topStripOffset/scalingFactor;
+   cout << "cols:" << img.cols << endl;
+  cout << "rows:" << img.rows << endl;
 
-      rectangle(img, Point2f(squareOffset, i*partHeight+squareOffset), Point2f(img.cols-squareOffset, i*partHeight+squareHeight-squareOffset), cv::Scalar(0, 0, 255), 2);
-  }
+   for (int i=0; i<noOfColors; i++){
+     cout << "img size " << img.rows << ", " << img.cols << endl;
+     Rect box(squareOffset, i*partHeight+topOffset, img.cols-squareOffset*2, squareHeight-squareOffset);
+     cout << "rect size: " << box.tl() << ", " << box.br() << endl;
+     Mat imgSquare = img(box);
+       //Mat calibrated = colorCalibrateImage(imgSquare, calibrationMatrix);
+       //result.push_back(getAverageValues(calibrated));
+     result.push_back(getAverageValues(imgSquare));
+             rectangle(img, Point2f(squareOffset, i*partHeight+topOffset), Point2f(img.cols-squareOffset, i*partHeight+squareHeight+topOffset-squareOffset), cv::Scalar(0, 0, 255), 2);
+   }
   return result;
 }
 
@@ -498,3 +507,18 @@ Mat HelperMethods::getStripImageDebug(Mat imgOriginal){
   }
   return imgStrip;
 }
+
+Mat HelperMethods::getColorSquaresDebug(Mat img){
+  int noOfColors = 12;
+  float partHeight = (img.rows - topStripOffset - bottomStripOffset + spaceBetweenSquares)/12.0;
+  float ratio = squareHeight/float(squareHeight + spaceBetweenSquares);
+  float squareHeight = ratio * partHeight;
+  int topOffset = topStripOffset/scalingFactor;
+  cout << "cols:" << img.cols << endl;
+  for (int i=0; i<noOfColors; i++){
+    cout << "size: " <<  i*partHeight +squareHeight << endl;
+      rectangle(img, Point2f(squareOffset, i*partHeight+topOffset), Point2f(img.cols-squareOffset, i*partHeight+squareHeight+topOffset-squareOffset), cv::Scalar(0, 0, 255), 2);
+  }
+  return img;
+}
+

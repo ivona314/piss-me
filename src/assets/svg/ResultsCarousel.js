@@ -17,6 +17,10 @@ export default class ResultsCarousel extends Component {
     this.init();
     this.graphicColor = ['#388087', '#6fb3b8', '#badfe7'];
     this.animationShowed = false;
+
+    for (var i=0; i<3; i++){
+      this.state.parameters[i].data = [{ y: Math.floor(this.props.data[0][0]/10), label: " " }, { y: 100-i*10, label: " "  }];
+    }
     setTimeout(() => {
       let oldParams = [...this.state.parameters];
       oldParams[0].initialData = [{ y: 70, label: " " }, { y: 30, label: " "  }],

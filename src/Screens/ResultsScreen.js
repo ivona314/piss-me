@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet} from 'react-native';
+import { View, StyleSheet, Text} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import ResultsCarousel from '../assets/svg/ResultsCarousel';
@@ -12,6 +12,7 @@ class ResultsScreen extends Component {
 
 constructor(props) {
     super(props);
+
 }
 
 
@@ -22,9 +23,11 @@ static navigationOptions = {
 
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
-        <ResultsCarousel/>
+        <ResultsCarousel data={this.props.navigation.state.params.data}/>
       </View>
     );
   }
