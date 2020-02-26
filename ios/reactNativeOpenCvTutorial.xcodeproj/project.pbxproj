@@ -17,8 +17,8 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2D1B602E24045C3E002D5B81 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D850F7D23636719006FD4F8 /* opencv2.framework */; };
 		2D850F78236356D6006FD4F8 /* RNOpenCvLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D850F76236356D6006FD4F8 /* RNOpenCvLibrary.mm */; };
-		2D850F8123636AF5006FD4F8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D850F7D23636719006FD4F8 /* opencv2.framework */; };
 		2D850F842364599A006FD4F8 /* ImageProcessing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D850F832364599A006FD4F8 /* ImageProcessing.mm */; };
 		2D8C5FA0237C1F4E00FAF42B /* HelperMethods.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C5F9E237C1F4E00FAF42B /* HelperMethods.cpp */; };
 		2DA5CB4D236642680036B98B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA5CB4C236642670036B98B /* Media.xcassets */; };
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D850F8123636AF5006FD4F8 /* opencv2.framework in Frameworks */,
+				2D1B602E24045C3E002D5B81 /* opencv2.framework in Frameworks */,
 				05BA9F865F7A8A89768F5263 /* libPods-reactNativeOpenCvTutorial.a in Frameworks */,
 				2DC8BAC1239E960B0092C9C0 /* sound.mp3 in Frameworks */,
 			);
