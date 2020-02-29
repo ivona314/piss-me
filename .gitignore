@@ -1,1 +1,6 @@
-ios/opencv2.framework/opencv2
+ios/opencv2.framework/*
+.DS_Store
+*.iml
+.idea
+.DB_Store
+node_modules/*
