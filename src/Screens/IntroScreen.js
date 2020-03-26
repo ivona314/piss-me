@@ -63,7 +63,7 @@ rate={1.0}
 ignoreSilentSwitch={"obey"}
 />
 
-<Text style={styles.text_wellcome}>Wellcome to{"\n"}MANÉO</Text>
+<Text style={styles.text_wellcome}>Wellcome to{"\n"}CheckIT</Text>
 
 
 		<TouchableOpacity style={styles.btn_learn_more}
