@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text} from 'react-native'
+import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text, Alert, Image} from 'react-native'
+import { SocialIcon } from 'react-native-elements'
 
 const DismissKeyboard = ({ children }) => (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -10,7 +11,8 @@ const DismissKeyboard = ({ children }) => (
 export default class Signup extends React.Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        password_confirmation: ''
     };
 
     handleEmailChange = email => {
@@ -21,10 +23,16 @@ export default class Signup extends React.Component {
         this.setState({ password: password })
     };
 
+    handlePasswordConfirmationChange = password_confirmation => {
+        this.setState({ password_confirmation: password_confirmation })
+    };
+
     onSignUp = () => {
         try {
-            if (this.state.email.length > 0 && this.state.password.length > 0) {
+            if (this.state.email.length > 0 && this.state.password.length > 0 && this.state.password_confirmation.length > 0 && (this.state.password === this.state.password_confirmation)) {
                 this.props.navigation.navigate('Login')
+            } else {
+                Alert.alert('Oops!', 'Input values are invalid. Please try again!')
             }
         } catch (error) {
             alert(error)
@@ -37,6 +45,12 @@ export default class Signup extends React.Component {
             <DismissKeyboard>
                 <View style={styles.container}>
                     <Text style={styles.logo}>CheckIT</Text>
+                    <View style={styles.socialContainer}>
+                        <SocialIcon type='twitter'/>
+                        <SocialIcon type='facebook'/>
+                        <SocialIcon type='google'/>
+                    </View>
+                    <Text style={styles.labelOr}>OR</Text>
                     <View style={styles.inputView} >
                         <TextInput
                             style={styles.inputText}
@@ -57,7 +71,16 @@ export default class Signup extends React.Component {
                             onChangeText={this.handlePasswordChange}
                         />
                     </View>
-
+                    <View style={styles.inputView} >
+                        <TextInput
+                            secureTextEntry
+                            style={styles.inputText}
+                            value={this.state.password_confirmation}
+                            placeholder='Enter password confirmation'
+                            placeholderTextColor="#003f5c"
+                            onChangeText={this.handlePasswordConfirmationChange}
+                        />
+                    </View>
                     <TouchableOpacity style={styles.loginBtn} onPress={this.onSignUp}>
                         <Text style={styles.loginText}>SIGNUP</Text>
                     </TouchableOpacity>
@@ -107,10 +130,22 @@ const styles = StyleSheet.create({
         marginBottom:10
     },
     loginText:{
-        color:"white"
+        color:"white",
+        fontWeight: "bold"
     },
     login:{
         color:"white",
-        fontSize:16
+        fontSize:16,
+        fontWeight: "bold"
+    },
+    socialContainer:{
+        flexDirection: 'row',
+    },
+    labelOr:{
+        marginTop:20,
+        marginBottom:25,
+        color:"white",
+        fontSize:16,
+        fontWeight: "bold"
     }
 });

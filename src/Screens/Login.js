@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text} from 'react-native'
+import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text, Alert} from 'react-native'
+import { SocialIcon } from 'react-native-elements'
 
 const DismissKeyboard = ({ children }) => (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -25,6 +26,8 @@ export default class Login extends React.Component {
         try {
             if (this.state.email.length > 0 && this.state.password.length > 0) {
                 this.props.navigation.navigate('App')
+            } else {
+                Alert.alert('Oops!', 'Credentials are invalid. Please try again!')
             }
         } catch (error) {
             alert(error)
@@ -37,6 +40,12 @@ export default class Login extends React.Component {
             <DismissKeyboard>
                 <View style={styles.container}>
                     <Text style={styles.logo}>CheckIT</Text>
+                    <View style={styles.socialContainer}>
+                        <SocialIcon type='twitter'/>
+                        <SocialIcon type='facebook'/>
+                        <SocialIcon type='google'/>
+                    </View>
+                    <Text style={styles.labelOr}>OR</Text>
                     <View style={styles.inputView} >
                         <TextInput
                             style={styles.inputText}
@@ -65,7 +74,7 @@ export default class Login extends React.Component {
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={this.goToSignup}>
-                        <Text style={styles.signup}>Signup</Text>
+                        <Text style={styles.signup}>Not registered? Sign up now</Text>
                     </TouchableOpacity>
                 </View>
             </DismissKeyboard>
@@ -101,7 +110,8 @@ const styles = StyleSheet.create({
     },
     forgot:{
         color:"white",
-        fontSize:16
+        fontSize:16,
+        fontWeight: "bold"
     },
     loginBtn:{
         width:"80%",
@@ -114,10 +124,22 @@ const styles = StyleSheet.create({
         marginBottom:10
     },
     loginText:{
-        color:"white"
+        color:"white",
+        fontWeight: "bold"
     },
     signup:{
         color:"white",
-        fontSize:16
+        fontSize:16,
+        fontWeight: "bold"
+    },
+    socialContainer:{
+        flexDirection: 'row',
+    },
+    labelOr:{
+        marginTop:20,
+        marginBottom:25,
+        color:"white",
+        fontSize:16,
+        fontWeight: "bold"
     }
 });
