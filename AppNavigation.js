@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { View, Image, TouchableOpacity } from 'react-native'
+import {View, Image, TouchableOpacity, SafeAreaView, Text, ScrollView, ImageBackground} from 'react-native'
 import { createAppContainer } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import {createDrawerNavigator, DrawerItems} from "react-navigation-drawer";
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeComponent from "./src/Screens/Home";
 import ProfileComponent from "./src/Screens/Profile";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -52,19 +53,44 @@ const Screen2_StackNavigator = createStackNavigator({
     },
 });
 
+const CustomDrawerNavigation = (props) => {
+    return (
+        <ScrollView>
+            <ImageBackground source={require("./src/assets/drawer-bbb.jpg")} style={{ width: undefined, padding: 16, paddingTop: 48, height: 250 }}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', marginBottom: 10 }}>
+                    <Text style={{color: '#FFF', fontSize: 20, fontWeight: '800' }}>john.doe@example.com</Text>
+                </View>
+            </ImageBackground>
+            <View style={{ flex: 1 }}>
+                <DrawerItems {...props} />
+            </View>
+        </ScrollView>
+    );
+};
+
 const DrawerNavigatorExample = createDrawerNavigator({
-    WelcomeComponent: {
-        screen: FirstActivity_StackNavigator,
-        navigationOptions: {
-            drawerLabel: 'Home',
+        WelcomeComponent: {
+            screen: FirstActivity_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Home',
+                drawerIcon: <Icon name="home" style={{ fontSize: 24 }} />,
+            },
+        },
+        ProfileComponent: {
+            screen: Screen2_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Profile',
+                drawerIcon: <Icon name="user" style={{ fontSize: 24 }} />,
+            },
         },
     },
-    ProfileComponent: {
-        screen: Screen2_StackNavigator,
-        navigationOptions: {
-            drawerLabel: 'Profile',
-        },
+    {
+        initialRouteName: 'WelcomeComponent',
+        contentComponent: CustomDrawerNavigation,
+        drawerOpenRoute: 'DrawerOpen',
+        drawerCloseRoute: 'DrawerClose',
+        drawerToggleRoute: 'DrawerToggle'
     }
-});
+);
 
 export default createAppContainer(DrawerNavigatorExample);
