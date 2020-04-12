@@ -25,17 +25,17 @@ text_wellcome: {
 
 btn_learn_more: {
   position: 'absolute',
-  padding: 20,
-  borderRadius: 5,
   top: 400,
   justifyContent: 'center',
   alignItems: 'center',
   alignSelf: 'center',
-  backgroundColor: '#0099aa',
+  backgroundColor: '#087694',
+  width:"80%",
+  height:50,
 },
 
 text: {
-  fontSize: 16,
+  fontWeight: "bold",
   textTransform: 'uppercase',
   color: '#FFFFFF',
 },
@@ -43,13 +43,13 @@ text: {
 
   btn_scan_code: {
     position: 'absolute',
-    padding: 20,
-    borderRadius: 5,
     top: 500,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    backgroundColor: '#0099aa',
+    backgroundColor: '#087694',
+    width:"80%",
+    height:50,
   },
 
 

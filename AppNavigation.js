@@ -3,7 +3,7 @@ import {View, Image, TouchableOpacity, SafeAreaView, Text, ScrollView, ImageBack
 import { createAppContainer } from "react-navigation";
 import {createDrawerNavigator, DrawerItems} from "react-navigation-drawer";
 import {createStackNavigator} from 'react-navigation-stack';
-import WelcomeComponent from "./src/Screens/Home";
+import WelcomeComponent from "./src/Screens/IntroScreen";
 import ProfileComponent from "./src/Screens/Profile";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -32,7 +32,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
             title: 'Home',
             headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
             headerStyle: {
-                backgroundColor: '#FFF',
+                backgroundColor: '#D0C9D6',
             },
             headerTintColor: 'black',
         }),
@@ -46,7 +46,7 @@ const Screen2_StackNavigator = createStackNavigator({
             title: 'Profile',
             headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
             headerStyle: {
-                backgroundColor: '#FFF',
+                backgroundColor: '#D0C9D6',
             },
             headerTintColor: 'black',
         }),
@@ -55,7 +55,7 @@ const Screen2_StackNavigator = createStackNavigator({
 
 const CustomDrawerNavigation = (props) => {
     return (
-        <ScrollView>
+        <ScrollView style={{backgroundColor: '#D0C9D6'}}>
             <ImageBackground source={require("./src/assets/drawer-bbb.jpg")} style={{ width: undefined, padding: 16, paddingTop: 48, height: 250 }}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', marginBottom: 10 }}>
                     <Text style={{color: '#FFF', fontSize: 20, fontWeight: '800' }}>john.doe@example.com</Text>

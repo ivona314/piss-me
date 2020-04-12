@@ -28,7 +28,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Sound from 'react-native-sound';
 
-
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
 class IntroScreen extends Component {
 
@@ -63,7 +63,9 @@ rate={1.0}
 ignoreSilentSwitch={"obey"}
 />
 
-<Text style={styles.text_wellcome}>Wellcome to{"\n"}CheckIT</Text>
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image source={require("../assets/logo.png")} style={{ height: SCREEN_WIDTH * 0.65, width: SCREEN_WIDTH * 0.85 }}/>
+            </View>
 
 
 		<TouchableOpacity style={styles.btn_learn_more}

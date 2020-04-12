@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text, Alert, Image} from 'react-native'
+import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text, Alert, Image, Dimensions} from 'react-native'
 import { SocialIcon } from 'react-native-elements'
 
 const DismissKeyboard = ({ children }) => (
@@ -7,6 +7,8 @@ const DismissKeyboard = ({ children }) => (
         {children}
     </TouchableWithoutFeedback>
 );
+
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
 export default class Signup extends React.Component {
     state = {
@@ -44,7 +46,9 @@ export default class Signup extends React.Component {
         return (
             <DismissKeyboard>
                 <View style={styles.container}>
-                    <Text style={styles.logo}>CheckIT</Text>
+                    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                        <Image source={require("../assets/logo.png")} style={styles.logo}/>
+                    </View>
                     <View style={styles.socialContainer}>
                         <SocialIcon type='twitter'/>
                         <SocialIcon type='facebook'/>
@@ -96,7 +100,7 @@ export default class Signup extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#87CEFA',
+        backgroundColor: '#D0C9D6',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -104,12 +108,12 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         fontSize:50,
         color:"#2F4F4F",
-        marginBottom:40
+        height: SCREEN_WIDTH * 0.65,
+        width: SCREEN_WIDTH * 0.85
     },
     inputView:{
         width:"80%",
         backgroundColor:"#fff",
-        borderRadius:25,
         height:50,
         marginBottom:20,
         justifyContent:"center",
@@ -121,8 +125,7 @@ const styles = StyleSheet.create({
     },
     loginBtn:{
         width:"80%",
-        backgroundColor:"#2F4F4F",
-        borderRadius:25,
+        backgroundColor:"#087694",
         height:50,
         alignItems:"center",
         justifyContent:"center",
