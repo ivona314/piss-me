@@ -51,7 +51,7 @@ const Screen2_StackNavigator = createStackNavigator({
 const CustomDrawerNavigation = (props) => {
     return (
         <ScrollView style={{backgroundColor: '#D0C9D6'}}>
-            <ImageBackground source={require("./src/assets/drawer-bbb.jpg")} style={{ width: undefined, padding: 16, paddingTop: 48, height: 250 }}>
+            <ImageBackground source={require("./src/assets/drawer_bckg.png")} style={{ width: undefined, padding: 16, paddingTop: 48, height: 250 }}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end', marginBottom: 10 }}>
                     <Text style={{color: '#FFF', fontSize: 20, fontWeight: '800' }}>john.doe@example.com</Text>
                 </View>

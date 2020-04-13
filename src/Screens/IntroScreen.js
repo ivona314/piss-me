@@ -58,7 +58,7 @@ class NavigationBackStructure extends Component {
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={this.goBackwards.bind(this)}>
                     <Image
-                        source={{ uri: 'https://img.icons8.com/material/24/000000/arrow-pointing-left--v2.png' }}
+                        source={require("../assets/back_arrow.png")}
                         style={{ width: 25, height: 25, marginLeft: 15 }}
                     />
                 </TouchableOpacity>
