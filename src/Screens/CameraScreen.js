@@ -30,11 +30,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 var ImageProcessing = NativeModules.ImageProcessing;
 console.disableYellowBox = true;
-class CameraScreen extends Component {
- static navigationOptions = {
-		header: null,
-
-  }
+export default class CameraScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -251,12 +247,3 @@ class CameraScreen extends Component {
     );
   }
 }
-
-
-const AppNavigator = createStackNavigator({
-  CameraScreen: {
-    screen: CameraScreen,
-  },
-});
-
-export default createAppContainer(AppNavigator);

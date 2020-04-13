@@ -27,17 +27,12 @@ class NavigationDrawerStructure extends Component {
 
 const FirstActivity_StackNavigator = createStackNavigator({
     Welcome: {
-        screen: WelcomeComponent,
-        navigationOptions: ({ navigation }) => ({
-            title: 'Home',
-            headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
-            headerStyle: {
-                backgroundColor: '#D0C9D6',
-            },
-            headerTintColor: 'black',
-        }),
-    },
-});
+        screen: WelcomeComponent
+    }},
+    {
+        headerMode: 'none'
+    }
+);
 
 const Screen2_StackNavigator = createStackNavigator({
     Profile: {

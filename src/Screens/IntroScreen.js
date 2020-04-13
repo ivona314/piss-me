@@ -30,11 +30,25 @@ import Sound from 'react-native-sound';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-class IntroScreen extends Component {
+class NavigationDrawerStructure extends Component {
+    toggleDrawer = () => {
+        this.props.navigationProps.toggleDrawer();
+    };
+    render() {
+        return (
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
+                    <Image
+                        source={{ uri: 'https://reactnativecode.com/wp-content/uploads/2018/04/hamburger_icon.png' }}
+                        style={{ width: 25, height: 25, marginLeft: 15 }}
+                    />
+                </TouchableOpacity>
+            </View>
+        );
+    }
+}
 
- static navigationOptions = {
-		header: null,
-  }
+class IntroScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -109,15 +123,20 @@ const fade = (props) => {
 const AppNavigator = createStackNavigator({
 
   Intro: {
-    screen: IntroScreen,
+        screen: IntroScreen,
+        navigationOptions: ({ navigation }) => ({
+              title: 'Home',
+              headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+              headerStyle: {
+                  backgroundColor: '#D0C9D6',
+              },
+              headerTintColor: 'black',
+      }),
   },
   CameraScreen: {
     screen: CameraScreen,
      navigationOptions: ({ navigation }) => ({
-      title: 'Strip scanner',
-       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+         title: 'Strip scanner'
     }),
 
 
@@ -126,10 +145,7 @@ const AppNavigator = createStackNavigator({
     AnimationScreen: {
     screen: AnimationScreen,
      navigationOptions: ({ navigation }) => ({
-      title: 'Animation Screen',
-       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      title: 'Animation Screen'
     }),
 
 
@@ -137,28 +153,19 @@ const AppNavigator = createStackNavigator({
   QRCodeScreen: {
     screen: QRCodeScreen,
        navigationOptions: ({ navigation }) => ({
-      title: 'Scan the QR code',
-       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      title: 'Scan the QR code'
     }),
 },
 ResultsScreen: {
   screen: ResultsScreen,
      navigationOptions: ({ navigation }) => ({
-    title: 'Results',
-     headerTitleStyle: {
-      fontWeight: 'bold',
-    },
+    title: 'Results'
   }),
 },
   AnalyseDataScreen: {
     screen: AnalyseDataScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Data Analysis',
-       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      title: 'Data Analysis'
     }),
 
 
@@ -168,21 +175,13 @@ ResultsScreen: {
 defaultNavigationOptions: {
 
       headerStyle: {
-        backgroundColor: '#0099aa',
+        backgroundColor: '#D0C9D6',
       },
-      headerMode: 'screen',
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
-    },
-
-    transitionConfig: () => ({
-        screenInterpolator: (props) => {
-            return fade(props)
-        }
-    })
-
+    }
 }
 
 );
