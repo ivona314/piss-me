@@ -27,6 +27,7 @@ import Video from "react-native-video";
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Sound from 'react-native-sound';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -40,6 +41,24 @@ class NavigationDrawerStructure extends Component {
                 <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
                     <Image
                         source={{ uri: 'https://reactnativecode.com/wp-content/uploads/2018/04/hamburger_icon.png' }}
+                        style={{ width: 25, height: 25, marginLeft: 15 }}
+                    />
+                </TouchableOpacity>
+            </View>
+        );
+    }
+}
+
+class NavigationBackStructure extends Component {
+    goBackwards = () => {
+        this.props.navigationProps.goBack();
+    };
+    render() {
+        return (
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={this.goBackwards.bind(this)}>
+                    <Image
+                        source={{ uri: 'https://img.icons8.com/material/24/000000/arrow-pointing-left--v2.png' }}
                         style={{ width: 25, height: 25, marginLeft: 15 }}
                     />
                 </TouchableOpacity>
@@ -136,7 +155,12 @@ const AppNavigator = createStackNavigator({
   CameraScreen: {
     screen: CameraScreen,
      navigationOptions: ({ navigation }) => ({
-         title: 'Strip scanner'
+         title: 'Strip scanner',
+         headerLeft: <NavigationBackStructure navigationProps={navigation} />,
+         headerStyle: {
+             backgroundColor: '#D0C9D6',
+         },
+         headerTintColor: 'black',
     }),
 
 

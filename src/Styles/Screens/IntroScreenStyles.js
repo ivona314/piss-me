@@ -25,6 +25,7 @@ text_wellcome: {
 
 btn_learn_more: {
   position: 'absolute',
+  borderRadius: 3,
   top: 400,
   justifyContent: 'center',
   alignItems: 'center',
@@ -43,6 +44,7 @@ text: {
 
   btn_scan_code: {
     position: 'absolute',
+    borderRadius: 3,
     top: 500,
     justifyContent: 'center',
     alignItems: 'center',
