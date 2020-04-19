@@ -42,6 +42,7 @@ const Screen2_StackNavigator = createStackNavigator({
             headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
             headerStyle: {
                 backgroundColor: '#D0C9D6',
+                fontWeight: 'bold',
             },
             headerTintColor: 'black',
         }),

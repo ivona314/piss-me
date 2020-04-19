@@ -148,6 +148,7 @@ const AppNavigator = createStackNavigator({
               headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
               headerStyle: {
                   backgroundColor: '#D0C9D6',
+                  fontWeight: 'bold',
               },
               headerTintColor: 'black',
       }),
@@ -159,6 +160,7 @@ const AppNavigator = createStackNavigator({
          headerLeft: <NavigationBackStructure navigationProps={navigation} />,
          headerStyle: {
              backgroundColor: '#D0C9D6',
+             fontWeight: 'bold',
          },
          headerTintColor: 'black',
     }),
