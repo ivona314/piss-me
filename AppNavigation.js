@@ -5,7 +5,9 @@ import {createDrawerNavigator, DrawerItems} from "react-navigation-drawer";
 import {createStackNavigator} from 'react-navigation-stack';
 import WelcomeComponent from "./src/Screens/IntroScreen";
 import ProfileComponent from "./src/Screens/Profile";
+import LogoutComponent from "./src/Screens/Logout";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import IconNew from 'react-native-vector-icons/MaterialCommunityIcons';
 
 class NavigationDrawerStructure extends Component {
     toggleDrawer = () => {
@@ -49,6 +51,21 @@ const Screen2_StackNavigator = createStackNavigator({
     },
 });
 
+const Screen3_StackNavigator = createStackNavigator({
+    Logout: {
+        screen: LogoutComponent,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Logout',
+            headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+            headerStyle: {
+                backgroundColor: '#D0C9D6',
+                fontWeight: 'bold',
+            },
+            headerTintColor: 'black',
+        }),
+    },
+});
+
 const CustomDrawerNavigation = (props) => {
     return (
         <ScrollView style={{backgroundColor: '#D0C9D6'}}>
@@ -77,6 +94,13 @@ const DrawerNavigatorExample = createDrawerNavigator({
             navigationOptions: {
                 drawerLabel: 'Profile',
                 drawerIcon: <Icon name="user" style={{ fontSize: 24 }} />,
+            },
+        },
+        LogoutComponent: {
+            screen: Screen3_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Logout',
+                drawerIcon: <IconNew name="logout" style={{ fontSize: 24 }} />,
             },
         },
     },
