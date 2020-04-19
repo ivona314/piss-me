@@ -29,9 +29,28 @@ export default class Signup extends React.Component {
         this.setState({ password_confirmation: password_confirmation })
     };
 
+    checkStatus(res) {
+        if (res.status >= 200 && res.status < 300) {
+            Alert.alert('Congrats!', 'You have successfully created your account!')
+        } else {
+            Alert.alert('Oops!', 'Something went wrong!')
+        }
+    }
+
     onSignUp = () => {
         try {
             if (this.state.email.length > 0 && this.state.password.length > 0 && this.state.password_confirmation.length > 0 && (this.state.password === this.state.password_confirmation)) {
+                fetch('https://secret-inlet-80309.herokuapp.com/api/v1/auth', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "email": this.state.email,
+                        "password": this.state.password,
+                        "password_confirmation": this.state.password_confirmation
+                    })
+                }).then(this.checkStatus);
                 this.props.navigation.navigate('Login')
             } else {
                 Alert.alert('Oops!', 'Input values are invalid. Please try again!')
