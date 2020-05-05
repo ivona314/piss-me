@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native'
+import {AsyncStorage, StyleSheet, Text, View} from 'react-native'
 
 export default class Logout extends Component {
+    componentDidMount(){
+        AsyncStorage.removeItem("userLogin");
+        this.props.navigation.navigate('Auth')
+    }
+
     render() {
         return (
             <View style={styles.container}>
