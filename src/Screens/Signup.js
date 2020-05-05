@@ -29,14 +29,6 @@ export default class Signup extends React.Component {
         this.setState({ password_confirmation: password_confirmation })
     };
 
-    checkStatus(res) {
-        if (res.status >= 200 && res.status < 300) {
-            Alert.alert('Congrats!', 'You have successfully created your account!')
-        } else {
-            Alert.alert('Oops!', 'Something went wrong!')
-        }
-    }
-
     onSignUp = () => {
         try {
             if (this.state.email.length > 0 && this.state.password.length > 0 && this.state.password_confirmation.length > 0 && (this.state.password === this.state.password_confirmation)) {
@@ -50,8 +42,14 @@ export default class Signup extends React.Component {
                         "password": this.state.password,
                         "password_confirmation": this.state.password_confirmation
                     })
-                }).then(this.checkStatus);
-                this.props.navigation.navigate('Login')
+                }).then(response => {
+                    if (response.status === 200) {
+                        Alert.alert('Congrats!', 'You have successfully created your account!')
+                        this.props.navigation.navigate('Login')
+                    } else {
+                        Alert.alert('Oops!', 'Something went wrong!')
+                    }
+                });
             } else {
                 Alert.alert('Oops!', 'Input values are invalid. Please try again!')
             }
