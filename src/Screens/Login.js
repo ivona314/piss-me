@@ -25,51 +25,44 @@ export default class Login extends React.Component {
     };
 
     onLogin = () => {
-        try {
-            if (this.state.email.length > 0 && this.state.password.length > 0) {
-                fetch('https://secret-inlet-80309.herokuapp.com/api/v1/auth/sign_in', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "email": this.state.email,
-                        "password": this.state.password
-                    })
-                }).then(response => {
-                    if (response.status === 200) {
-                        let accessToken = response.headers.get('Access-Token');
-                        let client = response.headers.get('Client');
-                        let uid = response.headers.get('Uid');
-                        let loginData = {accessToken: accessToken, client: client, uid: uid};
-
-                        AsyncStorage.setItem('userLogin', JSON.stringify(loginData));
-
-                        //AsyncStorage.getItem('userLogin', (err, result) => {
-                            //Alert.alert('SAD!',  'token 1:' + JSON.parse(result).accessToken);
-                        //});
-                    } else {
-                        Alert.alert('Oops!', 'Credentials are invalid. Please try again!')
-                    }
-
-                    return response.json();
+        if (this.state.email.length > 0 && this.state.password.length > 0) {
+            fetch('https://secret-inlet-80309.herokuapp.com/api/v1/auth/sign_in', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "email": this.state.email,
+                    "password": this.state.password
                 })
-                    .then(data => {
-                        AsyncStorage.setItem('userDetails', JSON.stringify(data));
+            }).then(response => {
+                if (response.status === 200) {
+                    let accessToken = response.headers.get('Access-Token');
+                    let client = response.headers.get('Client');
+                    let uid = response.headers.get('Uid');
+                    let loginData = {accessToken: accessToken, client: client, uid: uid};
 
-                        //AsyncStorage.getItem('userDetails', (err, result) => {
-                            //Alert.alert('SAD!', 'provider:' + JSON.parse(result).data.provider);
-                        //});
+                    AsyncStorage.setItem('userLogin', JSON.stringify(loginData));
 
-                        Alert.alert('Congrats!', 'You have successfully signed in!');
-                        this.props.navigation.navigate('App')
-                    })
-                    .catch((error) => Alert.alert('Oops!', error));
-            } else {
-                Alert.alert('Oops!', 'Credentials are invalid. Please try again!')
-            }
-        } catch (error) {
-            alert(error)
+                    //AsyncStorage.getItem('userLogin', (err, result) => {
+                        //Alert.alert('SAD!',  'token 1:' + JSON.parse(result).accessToken);
+                    //});
+                    return response.json();
+                } else {
+                    throw Error('Credentials are invalid. Please try again!');
+                }
+            }).then(data => {
+                AsyncStorage.setItem('userDetails', JSON.stringify(data));
+
+                //AsyncStorage.getItem('userDetails', (err, result) => {
+                    //Alert.alert('SAD!', 'provider:' + JSON.parse(result).data.provider);
+                //});
+
+                Alert.alert('Congrats!', 'You have successfully signed in!');
+                this.props.navigation.navigate('App')
+            }).catch((error) => Alert.alert('Oops!', error.message));
+        } else {
+            Alert.alert('Oops!', 'Credentials are invalid. Please try again!')
         }
     };
 
