@@ -40,7 +40,8 @@ export default class Login extends React.Component {
                     let accessToken = response.headers.get('Access-Token');
                     let client = response.headers.get('Client');
                     let uid = response.headers.get('Uid');
-                    let expiry = new Date().getDate() + 14;
+                    let expiry = new Date();
+                    expiry.setDate(expiry.getDate() + 14);
                     let loginData = {accessToken: accessToken, client: client, uid: uid, expiryDate: expiry};
 
                     AsyncStorage.setItem('userLogin', JSON.stringify(loginData));

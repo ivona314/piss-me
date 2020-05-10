@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {AsyncStorage, StyleSheet, Text, View} from 'react-native'
+import {Alert, AsyncStorage, StyleSheet, Text, View} from 'react-native'
 
 export default class Logout extends Component {
     componentDidMount(){
         AsyncStorage.removeItem("userLogin");
+        Alert.alert('Congrats!', 'You have successfully logged out!');
         this.props.navigation.navigate('Auth')
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthNavigation from './AuthNavigation';
 import AppNavigation from './AppNavigation'
-import {Text, AsyncStorage} from "react-native";
+import {Text, AsyncStorage, Alert} from "react-native";
 import { createSwitchNavigator, createAppContainer } from 'react-navigation'
 
 const SwitchNavigatorAuth = createSwitchNavigator(
@@ -28,27 +28,33 @@ const AppContainerAuth = createAppContainer(SwitchNavigatorAuth);
 const AppContainerApp = createAppContainer(SwitchNavigatorApp);
 
 export default class App extends Component<> {
-  _isExpired = false;
+    state = {
+        _sessionExist: false
+    };
 
-  componentDidMount(){
-    if (!this.sessionExists()) {
-        this._isExpired = true;
-    }
+  componentWillMount(){
+    this.validateSession();
   }
 
-  sessionExists(){
-    if (AsyncStorage.getItem("userLogin") !== null && AsyncStorage.getItem("userLogin") !== undefined) {
-        AsyncStorage.getItem('userLogin', (err, result) => {
-            return JSON.parse(result).expiryDate > new Date().getDate();
+   validateSession(){
+    try {
+        AsyncStorage.getItem('userLogin', (err, value) => {
+            if (value !== null) {
+                let expiry = new Date(JSON.parse(value).expiryDate);
+                let currentTime = new Date();
+                if (expiry > currentTime) {
+                    this.setState({ _sessionExist: true })
+                }
+            }
         });
-    } else {
-        return false;
+    } catch (error) {
+        Alert.alert('Oops', error.message);
     }
   }
 
   render() {
     return (
-        this._isExpired ? <AppContainerAuth/> : <AppContainerApp/>
+        this.state._sessionExist ? <AppContainerApp/> : <AppContainerAuth/>
     );
   }
 }
