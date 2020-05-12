@@ -1,5 +1,17 @@
 import React from 'react'
-import { StyleSheet, View, TouchableWithoutFeedback, Keyboard, TextInput, TouchableOpacity, Text, Alert, Image, Dimensions} from 'react-native'
+import {
+    StyleSheet,
+    View,
+    TouchableWithoutFeedback,
+    Keyboard,
+    TextInput,
+    TouchableOpacity,
+    Text,
+    Alert,
+    Image,
+    Dimensions,
+    AsyncStorage
+} from 'react-native'
 import DatePicker from 'react-native-datepicker'
 import UserAvatar from 'react-native-user-avatar';
 
@@ -13,12 +25,48 @@ const SCREEN_WIDTH = Dimensions.get("window").width;
 
 export default class Profile extends React.Component {
     state = {
-        height: null,
-        weight: null,
+        height: '',
+        weight: '',
         dateOfBirth: "1970-01-01",
         gender: '',
-        weeklyActivity: null,
+        weeklyActivity: '',
+        email: '',
+        uid: '',
+        accessToken: '',
+        client: '',
     };
+
+    componentDidMount(){
+        AsyncStorage.getItem('userLogin', (err, value) => {
+            if (value !== null) {
+                this.setState({...JSON.parse(value)}, () => this.getUser());
+            }
+        });
+    }
+
+    getUser(){
+        fetch('https://secret-inlet-80309.herokuapp.com/api/v1/show', {
+            method: 'GET',
+            headers: {
+                'access-token': this.state.accessToken,
+                'uid': this.state.uid,
+                'client': this.state.client
+            }
+        }).then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                Alert.alert('ww', response.status.toString())
+            }
+        }).then(json => {
+            this.setState({ email: json.email });
+            this.setState({ height: json.height.toString() });
+            this.setState({ weight: json.weight.toString() });
+            this.setState({ dateOfBirth: json.date_of_birth });
+            this.setState({ gender: json.gender });
+            this.setState({ weeklyActivity: json.weekly_activity.toString() });
+        });
+    }
 
     handleHeightChange = height => {
         this.setState({ height: height })
@@ -38,11 +86,31 @@ export default class Profile extends React.Component {
 
     onSubmit = () => {
         try {
-            if (this.state.gender.length > 0 && this.state.height > 0  && this.state.weight > 0 && this.state.dateOfBirth !== null && this.state.weeklyActivity > 0) {
-                //Alert.alert('Congrats!', 'You have submitted your data successfully and helped us to advise you more accurately!')
-                Alert.alert('Congrats!', this.state.height + ';' + this.state.weight + ';' + this.state.gender + ';' + this.state.dateOfBirth + ';' + this.state.weeklyActivity + ';')
+            if (this.state.gender.length > 0 && this.state.height.length > 0  && this.state.weight.length > 0 && this.state.dateOfBirth !== null && this.state.weeklyActivity.length > 0) {
+                fetch('https://secret-inlet-80309.herokuapp.com/api/v1/add_details', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'access-token': this.state.accessToken,
+                        'uid': this.state.uid,
+                        'client': this.state.client
+                    },
+                    body: JSON.stringify({
+                        "height": this.state.height,
+                        "weight": this.state.weight,
+                        "date_of_birth": this.state.dateOfBirth,
+                        "gender": this.state.gender,
+                        "weekly_activity": this.state.weeklyActivity
+                    })
+                }).then(response => {
+                    if (response.status === 200) {
+                        Alert.alert('Congrats!', 'You have submitted your data successfully and helped us to advise you more accurately!');
+                    } else {
+                        Alert.alert('Oops!', 'Something went wrong!')
+                    }
+                });
             } else {
-                Alert.alert('Oops!', 'Credentials are invalid. Please try again!')
+                Alert.alert('Oops!', 'Input fields are invalid. Please try again!')
             }
         } catch (error) {
             alert(error)
@@ -55,7 +123,7 @@ export default class Profile extends React.Component {
                 <View style={styles.container}>
                     <View style={{ bottom: 30, width:"80%", justifyContent: 'center', alignItems: 'center' }}>
                         <UserAvatar size="100" name="John Doe" color="#087694" />
-                        <Text style={styles.avatar}>john.doe@example.com</Text>
+                        <Text style={styles.avatar}>{this.state.email}</Text>
                     </View>
                     <Text style={styles.signup}>Height in cm:</Text>
                     <View style={styles.inputView} >

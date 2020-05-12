@@ -54,7 +54,7 @@ export default class Login extends React.Component {
                     throw Error('Credentials are invalid. Please try again!');
                 }
             }).then(data => {
-                AsyncStorage.setItem('userDetails', JSON.stringify(data));
+                //AsyncStorage.setItem('userDetails', JSON.stringify(data));
 
                 //AsyncStorage.getItem('userDetails', (err, result) => {
                     //Alert.alert('SAD!', 'provider:' + JSON.parse(result).data.provider);
