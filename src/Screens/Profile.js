@@ -10,10 +10,12 @@ import {
     Alert,
     Image,
     Dimensions,
-    AsyncStorage
+    AsyncStorage,
+    Picker
 } from 'react-native'
 import DatePicker from 'react-native-datepicker'
 import UserAvatar from 'react-native-user-avatar';
+import RNPickerSelect from 'react-native-picker-select';
 
 const DismissKeyboard = ({ children }) => (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -149,13 +151,16 @@ export default class Profile extends React.Component {
                     </View>
                     <Text style={styles.signup}>Gender:</Text>
                     <View style={styles.inputView} >
-                        <TextInput
-                            style={styles.inputText}
+                        <RNPickerSelect
+                            onValueChange={(value) => this.handleGenderChange(value)}
+                            placeholder='Select gender'
+                            style={styles.genderInputText}
                             value={this.state.gender}
-                            placeholder='Enter Gender'
-                            placeholderTextColor="#003f5c"
-                            autoCapitalize='none'
-                            onChangeText={this.handleGenderChange}
+                            doneText='Confirm'
+                            items={[
+                                { label: 'Male', value: 'Male' },
+                                { label: 'Female', value: 'Female' },
+                            ]}
                         />
                     </View>
                     <Text style={styles.signup}>Weekly activity in minutes:</Text>
@@ -213,6 +218,20 @@ const styles = StyleSheet.create({
         height:50,
         color:"black"
     },
+    genderInputText:{
+        height:50,
+        color:"black",
+        backgroundColor: 'white',
+        modalViewBottom: {
+            backgroundColor: 'white',
+            borderTopWidth: 1,
+            borderTopColor: '#D0D4DB',
+        },
+        modalViewMiddle: {
+            backgroundColor: 'white',
+            borderBottomColor: '#D0D4DB',
+        },
+    },
     avatar:{
         color:"white",
         fontSize:16,
@@ -252,6 +271,11 @@ const styles = StyleSheet.create({
         dateInput: {
             top: 6,
             borderColor: "#fff",
+        },
+        btnTextConfirm: {
+            color: '#007aff',
+            fontWeight: '600',
+            fontSize: 17,
         }
     }
 });
