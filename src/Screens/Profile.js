@@ -58,7 +58,7 @@ export default class Profile extends React.Component {
             if (response.status === 200) {
                 return response.json();
             } else {
-                Alert.alert('ww', response.status.toString())
+                Alert.alert('Oops!', response.status.toString())
             }
         }).then(json => {
             this.setState({ email: json.email });
