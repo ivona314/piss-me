@@ -24,6 +24,9 @@
 		2DA5CB4D236642680036B98B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA5CB4C236642670036B98B /* Media.xcassets */; };
 		2DC8BAC1239E960B0092C9C0 /* sound.mp3 in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8BAC0239E960B0092C9C0 /* sound.mp3 */; };
 		2DCD954D1E0B4F2C00145EB5 /* reactNativeOpenCvTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeOpenCvTutorialTests.m */; };
+		2DFBC9F52520F985002C7626 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBC9F42520F984002C7626 /* main.jsbundle */; };
+		2DFBC9FF2520FEF4002C7626 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBC9FE2520FEF4002C7626 /* logo.png */; };
+		2DFBCA092520FFB1002C7626 /* Logo-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBCA082520FFB1002C7626 /* Logo-02.png */; };
 		512C073ABE21F7A9036CF14E /* libPods-reactNativeOpenCvTutorialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25FAAEAB4DBFDA2D82D5177 /* libPods-reactNativeOpenCvTutorialTests.a */; };
 		E3235CAAAA4CF1ECAC2560B3 /* libPods-reactNativeOpenCvTutorial-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA613F3C9028BC68CB28C777 /* libPods-reactNativeOpenCvTutorial-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,9 @@
 		2D8C5F9F237C1F4E00FAF42B /* HelperMethods.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HelperMethods.hpp; sourceTree = "<group>"; };
 		2DA5CB4C236642670036B98B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2DC8BAC0239E960B0092C9C0 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = ../src/Screens/sound.mp3; sourceTree = "<group>"; };
+		2DFBC9F42520F984002C7626 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		2DFBC9FE2520FEF4002C7626 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2DFBCA082520FFB1002C7626 /* Logo-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-02.png"; sourceTree = "<group>"; };
 		4E50A710C9B727F01FF19737 /* Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativeOpenCvTutorial-tvOSTests/Pods-reactNativeOpenCvTutorial-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		656B5367B7B651F23A93A543 /* Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig"; path = "Target Support Files/Pods-reactNativeOpenCvTutorial-tvOS/Pods-reactNativeOpenCvTutorial-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		8513B0BB263F4DF6AB8B3485 /* libPlaySound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libPlaySound.a; sourceTree = "<group>"; };
@@ -204,6 +210,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2DFBC9FE2520FEF4002C7626 /* logo.png */,
+				2DFBCA082520FFB1002C7626 /* Logo-02.png */,
+				2DFBC9F42520F984002C7626 /* main.jsbundle */,
 				2DA5CB4C236642670036B98B /* Media.xcassets */,
 				2D850F742363567D006FD4F8 /* OpenCV */,
 				13B07FAE1A68108700A75B9A /* reactNativeOpenCvTutorial */,
@@ -388,6 +397,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFBC9F52520F985002C7626 /* main.jsbundle in Resources */,
+				2DFBC9FF2520FEF4002C7626 /* logo.png in Resources */,
+				2DFBCA092520FFB1002C7626 /* Logo-02.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				2DA5CB4D236642680036B98B /* Media.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -424,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		0B08CE359FE046E0887F79A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -716,7 +728,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = adrianzgaljic;
+				PRODUCT_BUNDLE_IDENTIFIER = adrianzgaljic2;
 				PRODUCT_NAME = reactNativeOpenCvTutorial;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -744,7 +756,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = adrianzgaljic;
+				PRODUCT_BUNDLE_IDENTIFIER = adrianzgaljic2;
 				PRODUCT_NAME = reactNativeOpenCvTutorial;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
