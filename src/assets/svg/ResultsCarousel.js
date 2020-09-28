@@ -55,7 +55,7 @@ export default class ResultsCarousel extends Component {
         {
           id: "Hydration",
           initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
-          data : [{ y: 70, label: " " }, { y: 30, label: " "  }],
+          data : [{ y: 55, label: " " }, { y: 30, label: " "  }],
           description : "Staying hydrated is important to your overall, good health. It helps maintain your temperature, remove waste from your body, and lubricate your joints.",
           animationShown: true,
           animation: new Animated.Value(0),
@@ -64,7 +64,7 @@ export default class ResultsCarousel extends Component {
         }, {
           id: "Kidneys",
           initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
-          data : [{ y: 40, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 83, label: " " }, { y: 100, label: " "  }],
           description : "Kidneys have several extremely important functions. Their main tasks are to filter waste substances out of your blood and balance the levels of salts and water in your body.",
           animationShown: false,
           animation: new Animated.Value(0),
@@ -82,7 +82,7 @@ export default class ResultsCarousel extends Component {
         }, {
           id: "Energy",
           initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
-          data : [{ y: 50, label: " " }, { y: 100, label: " "  }],
+          data : [{ y: 70, label: " " }, { y: 100, label: " "  }],
           description : "Body energy is important for your overall wellness.",
           animationShown: false,
           animation: new Animated.Value(0),
@@ -90,8 +90,8 @@ export default class ResultsCarousel extends Component {
         }, {
           id: "pH",
           initialData : [{ y: 0, label: " " }, { y: 100, label: " "  }],
-          data : [{ y: 30, label: " " }, { y: 100, label: " "  }],
-          description : "Your body’s pH balance, also referred to as its acid-base balance, is the level of acids and bases in your blood at which your body functions best.",
+          data : [{ y: 90, label: " " }, { y: 100, label: " "  }],
+          description : "Your body’s pH balance, also referred to as its acid-base balance: the level of acids and bases in your blood at which your body functions best.",
           animationShown: false,
           animation: new Animated.Value(0),
           backgroundImage: require("../ph_background.jpg"),
@@ -117,7 +117,7 @@ export default class ResultsCarousel extends Component {
 
       <ImageBackground source={item.backgroundImage} style={styles.image_background_style} imageStyle={{ borderRadius: 25 }}>
       <Text style={styles.title}>{item.id}</Text>
-      <Animated.Text style={[styles.percentage_text, animatedStyle]}>{item.data[0].y/10}/10</Animated.Text>
+      <Animated.Text style={[styles.percentage_text, animatedStyle]}>{item.data[0].y}%</Animated.Text>
       <VictoryPie  animate={{ duration: 2000 }} data={item.initialData} width={300} height={300} colorScale={this.graphicColor} innerRadius={50} />
       <Text style={styles.description_text}>{item.description}</Text>
       </ImageBackground>

@@ -30,7 +30,7 @@ export default StyleSheet.create({
     position: 'absolute',
     left: 122,
     top: 210,
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
   },
 

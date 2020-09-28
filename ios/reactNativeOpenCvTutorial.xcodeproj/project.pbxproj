@@ -24,7 +24,6 @@
 		2DA5CB4D236642680036B98B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA5CB4C236642670036B98B /* Media.xcassets */; };
 		2DC8BAC1239E960B0092C9C0 /* sound.mp3 in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8BAC0239E960B0092C9C0 /* sound.mp3 */; };
 		2DCD954D1E0B4F2C00145EB5 /* reactNativeOpenCvTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeOpenCvTutorialTests.m */; };
-		2DFBC9F52520F985002C7626 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBC9F42520F984002C7626 /* main.jsbundle */; };
 		2DFBC9FF2520FEF4002C7626 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBC9FE2520FEF4002C7626 /* logo.png */; };
 		2DFBCA092520FFB1002C7626 /* Logo-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFBCA082520FFB1002C7626 /* Logo-02.png */; };
 		512C073ABE21F7A9036CF14E /* libPods-reactNativeOpenCvTutorialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25FAAEAB4DBFDA2D82D5177 /* libPods-reactNativeOpenCvTutorialTests.a */; };
@@ -200,6 +199,13 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		468EBE2725A1496EB2FFCBE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +228,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				EFA0B10BC2907EBCFFC33ADB /* Pods */,
 				2DC8BAB8239E85900092C9C0 /* Recovered References */,
+				468EBE2725A1496EB2FFCBE8 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -397,7 +404,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DFBC9F52520F985002C7626 /* main.jsbundle in Resources */,
 				2DFBC9FF2520FEF4002C7626 /* logo.png in Resources */,
 				2DFBCA092520FFB1002C7626 /* Logo-02.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
