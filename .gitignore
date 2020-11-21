@@ -4,3 +4,4 @@ ios/opencv2.framework/*
 .idea
 .DB_Store
 node_modules/*
+ios/build/*
